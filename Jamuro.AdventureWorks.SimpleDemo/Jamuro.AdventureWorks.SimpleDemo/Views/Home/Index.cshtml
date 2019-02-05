@@ -1,0 +1,58 @@
+﻿@using Jamuro.AdventureWorks.Resources
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>@Labels.ApplicationName</h1>
+    <p class="lead">Simple application demo by using SQL Server 2016 Adventure Works database and MVC 5.2</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Main Goal</h2>
+        <p>This demo intends to show different ways of improving performance by optimizing LINQ queries yet displaying ways to monitor and debug activity</p> 
+        <img src="~/Content/Images/Deloitte-ES-IMG-ORM1.png" />       
+    </div>
+    <div class="col-md-4">
+        <h2>Technologies</h2>
+        <p>
+            This demo makes use of the following components:
+            <ul>
+                <li><a href="https://blogs.msdn.microsoft.com/dotnet/2017/10/26/entity-framework-6-2-runtime-released/" target="_blank">EntityFramework 6.2</a><br />(Object Relational Mapper)</li>
+                <li><a href="https://logging.apache.org/log4net/" target="_blank">Log4Net NuGet Package</a><br />(Logging Tool)</li>
+                <li><a href="https://blogs.msdn.microsoft.com/webdev/2014/07/29/profile-and-time-your-asp-net-mvc-app-all-the-way-to-azure/" target="_blank">StopWatch NuGet package</a><br />(Simple Performance Testing)</li>
+            </ul>
+        </p>
+        <hr /> 
+        <h2>External Tools</h2>
+        <p>
+            I strongly recommend the use of the following components in order to monitor activity, apply best practices for coding and boost performance:
+            <ul>
+                <li>
+                    <a href="https://docs.microsoft.com/en-us/sql/tools/sql-server-profiler/sql-server-profiler?view=sql-server-2017" target="_blank">SQL Server Profiler</a><br />(Obsolete, but still useful)
+                </li>
+                <li>
+                    <a href="https://docs.microsoft.com/en-us/sql/relational-databases/extended-events/extended-events?view=sql-server-2017" target="_blank">SQL Server Extended Events</a><br />(Highly scalable and configurable tool to troubleshoot SQL performance issues)
+                </li>
+                <li>
+                    <a href="https://www.telerik.com/fiddler" target="_blank">Fiddler</a><br/>(Free web debugging tool)
+                </li>
+                <li>
+                    <a href="https://www.linqpad.net/" target="_blank">LINQPad</a><br/>(Lightweight testing tool for .Net)
+                </li>
+                <li><a href="https://www.sonarlint.org/visualstudio/" target="_blank">SonarLint</a><br />(IDE extension for Visual Studio)</li>
+            </ul>
+        </p>
+        
+    </div>
+    <div class="col-md-4">    
+        <h2>More Resources</h2>
+        <p><a href="https://www2.deloitte.com/es/es/pages/technology/articles/que-es-orm.html" target="_blank">¿Qué es un ORM? </a></p>
+        <p><a href="https://www2.deloitte.com/es/es/pages/technology/articles/cuando-usar-orm.html" target="_blank">¿Cuando usar un ORM?</a></p>
+        <p><a href="https://www2.deloitte.com/es/es/pages/technology/articles/como-optimizar-rendimiento-orm.html" target="_blank">¿Cómo optimizar el rendimiento de tu ORM?</a></p>        
+        <p><img class="img-thumbnail" src="~/Content/Images/ORM.Capture.1.PNG" /></p>
+    </div>
+
+</div>

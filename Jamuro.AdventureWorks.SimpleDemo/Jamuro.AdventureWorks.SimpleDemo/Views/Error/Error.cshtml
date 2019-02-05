@@ -1,0 +1,19 @@
+﻿@using Jamuro.AdventureWorks.Resources
+
+@model Jamuro.AdventureWorks.SimpleDemo.ViewModels.ErrorViewModel
+
+@{
+    ViewBag.Title = Model.Title();
+}
+
+<hgroup class="text-center">
+    <h1>@Model.SomethingWasWrong</h1>
+    <h2>@Html.Raw(Model.Message())</h2>
+</hgroup>
+<p class="text-center">
+    <img src="@Url.Action(Model.ImageErrorMethod, Model.ImageErrorController)" alt="Error" class="img-rounded img-error" style="width:25%;margin:20px;" />
+</p>
+<p class="text-center">
+    @Html.Raw(string.Format(Model.LinkToHome, Html.ActionLink(Labels.Home, "Index", "Home")))    
+</p>
+

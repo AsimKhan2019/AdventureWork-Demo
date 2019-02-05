@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jamuro.AdventureWorks.SimpleDemo", "Jamuro.AdventureWorks.SimpleDemo\Jamuro.AdventureWorks.SimpleDemo.csproj", "{F09D74B2-65AE-431C-952B-02C382389AFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jamuro.AdventureWorks.Resources", "Jamuro.AdventureWorks.Resources\Jamuro.AdventureWorks.Resources.csproj", "{3666F825-B026-470A-BC72-1E51BBA30A99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jamuro.AdventureWorks.Data.Entities", "Jamuro.AdventureWorks.Data.Entities\Jamuro.AdventureWorks.Data.Entities.csproj", "{F3B19C67-E44C-484F-B570-D3B3FD4A3F82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jamuro.AdventureWorks.Data.DAL", "Jamuro.AdventureWorks.Data.DAL\Jamuro.AdventureWorks.Data.DAL.csproj", "{87287CF6-CCFC-494F-A99E-F82912F3E6C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jamuro.AdventureWorks.Models", "Jamuro.AdventureWorks.Models\Jamuro.AdventureWorks.Models.csproj", "{CEB83BDC-7505-4E5A-9112-9DE36E75AE55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jamuro.AdventureWorks.Services", "Jamuro.AdventureWorks.Services\Jamuro.AdventureWorks.Services.csproj", "{C2033365-A460-4D38-BB0D-7753C87F4543}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F09D74B2-65AE-431C-952B-02C382389AFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F09D74B2-65AE-431C-952B-02C382389AFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F09D74B2-65AE-431C-952B-02C382389AFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F09D74B2-65AE-431C-952B-02C382389AFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3666F825-B026-470A-BC72-1E51BBA30A99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3666F825-B026-470A-BC72-1E51BBA30A99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3666F825-B026-470A-BC72-1E51BBA30A99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3666F825-B026-470A-BC72-1E51BBA30A99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3B19C67-E44C-484F-B570-D3B3FD4A3F82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3B19C67-E44C-484F-B570-D3B3FD4A3F82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3B19C67-E44C-484F-B570-D3B3FD4A3F82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3B19C67-E44C-484F-B570-D3B3FD4A3F82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87287CF6-CCFC-494F-A99E-F82912F3E6C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87287CF6-CCFC-494F-A99E-F82912F3E6C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87287CF6-CCFC-494F-A99E-F82912F3E6C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87287CF6-CCFC-494F-A99E-F82912F3E6C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEB83BDC-7505-4E5A-9112-9DE36E75AE55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEB83BDC-7505-4E5A-9112-9DE36E75AE55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEB83BDC-7505-4E5A-9112-9DE36E75AE55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEB83BDC-7505-4E5A-9112-9DE36E75AE55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2033365-A460-4D38-BB0D-7753C87F4543}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2033365-A460-4D38-BB0D-7753C87F4543}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2033365-A460-4D38-BB0D-7753C87F4543}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2033365-A460-4D38-BB0D-7753C87F4543}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
