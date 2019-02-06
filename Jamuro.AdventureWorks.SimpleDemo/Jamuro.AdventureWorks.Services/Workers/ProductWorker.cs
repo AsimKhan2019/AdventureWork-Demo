@@ -12,6 +12,8 @@ namespace Jamuro.AdventureWorks.Services.Workers
 {
     public class ProductWorker : WorkerBase, IProductWorker
     {
+        private readonly IEnumerable<Product> m_emptyProductList = new List<Product>() { };
+
         private IRepository<Product> ProductRepository { get { return this.UnitOfWork.GetRepository<Product>(); } }
 
         private static IEnumerable<Models.Product> GenerateProductModel(IEnumerable<Product> products)
@@ -67,25 +69,48 @@ namespace Jamuro.AdventureWorks.Services.Workers
           
         }
 
+        #region Bad ways of checking the existence of rows before retrieving them
+
+        public IEnumerable<Models.Product> GetAllProductsWithCheckAllCount()
+        {
+            return GenerateProductModel(ProductRepository.GetAll().Count() > 0 ? ProductRepository.GetAll() : m_emptyProductList);
+        }
+
+        public IEnumerable<Models.Product> GetAllProductsWithCheckAllAny()
+        {
+            return GenerateProductModel(ProductRepository.GetAll().Any() ? ProductRepository.GetAll() : m_emptyProductList);
+        }
+
+        public IEnumerable<Models.Product> GetAllProductsWithCheckOne()
+        {
+            return GenerateProductModel(ProductRepository.GetOne(x=>true) != null ? ProductRepository.GetAll() : m_emptyProductList);
+        }
+
+        #endregion
+
         public IEnumerable<Models.Product> GetAllProducts()
         {
-            return GenerateProductModel(ProductRepository.GetAll());
+            return GenerateProductModel(ProductRepository.Exists() ? ProductRepository.GetAll() : m_emptyProductList);
         }
 
         public IEnumerable<Models.Product> GetAllProductsWithIncludes()
         {
-            return GenerateProductModel(ProductRepository.GetAll(false,
-                x => x.ProductReview,
-                x => x.ProductSubcategory.ProductCategory,
-                x => x.ProductProductPhoto.Select(y => y.ProductPhoto)));
+            return GenerateProductModel(ProductRepository.Exists() ? 
+                ProductRepository.GetAll(false,
+                    x => x.ProductReview,
+                    x => x.ProductSubcategory.ProductCategory,
+                    x => x.ProductProductPhoto.Select(y => y.ProductPhoto)) : 
+                m_emptyProductList);
         }
 
         public IEnumerable<Models.Product> GetAllProductsWithIncludesNoTracking()
         {
-            return GenerateProductModel(ProductRepository.GetAll(true, 
-                x=>x.ProductReview, 
-                x=>x.ProductSubcategory.ProductCategory, 
-                x=>x.ProductProductPhoto.Select(y=>y.ProductPhoto)));
+            return GenerateProductModel(ProductRepository.Exists() ? 
+                ProductRepository.GetAll(true, 
+                    x=>x.ProductReview, 
+                    x=>x.ProductSubcategory.ProductCategory, 
+                    x=>x.ProductProductPhoto.Select(y=>y.ProductPhoto)) : 
+                m_emptyProductList);
         }
 
     }

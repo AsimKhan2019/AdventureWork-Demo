@@ -8,10 +8,42 @@ namespace Jamuro.AdventureWorks.SimpleDemo.ViewModels
 {
     public class ErrorViewModel : BaseViewModel
     {
-        public string SomethingWasWrong = ErrorMessages.Error_SomethingWasWrong;
-        public string LinkToHome = Messages.LinkToHome_Message;
-        public string ImageErrorController = "Error";
-        public string ImageErrorMethod = "GetErrorImage";
+        private readonly string m_somethingWasWrong = ErrorMessages.Error_SomethingWasWrong;
+        private readonly string m_linkToHome = Messages.LinkToHome_Message;
+        private readonly string m_imageErrorController = "Error";
+        private readonly string m_imageErrorMethod = "GetErrorImage";
+
+        public string ImageErrorMethod
+        {
+            get
+            {
+                return m_imageErrorMethod;
+            }
+        }
+
+        public string ImageErrorController
+        {
+            get
+            {
+                return m_imageErrorController;
+            }
+        }
+
+        public string LinkToHome
+        {
+            get
+            {
+                return m_linkToHome;
+            }
+        }
+
+        public string SomethingWasWrong
+        {
+            get
+            {
+                return m_somethingWasWrong;
+            }
+        }
 
         public override string Title()
         {

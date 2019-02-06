@@ -36,7 +36,7 @@
         <EntityTypeShape EntityType="AdventureWorks2016Model.Culture" Width="1.5" PointX="9.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AdventureWorks2016Model.Illustration" Width="1.5" PointX="3.75" PointY="20.125" IsExpanded="true" />
         <EntityTypeShape EntityType="AdventureWorks2016Model.Location" Width="1.5" PointX="9" PointY="44.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdventureWorks2016Model.Product" Width="1.5" PointX="6" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2016Model.Product" Width="1.5" PointX="6" PointY="25" IsExpanded="true" FillColor="255, 128, 0" />
         <EntityTypeShape EntityType="AdventureWorks2016Model.Product_inmem" Width="1.5" PointX="14.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AdventureWorks2016Model.Product_ondisk" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AdventureWorks2016Model.ProductCategory" Width="1.5" PointX="1.5" PointY="32.375" IsExpanded="true" />

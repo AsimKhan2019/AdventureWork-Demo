@@ -59,7 +59,6 @@
     <Compile Include="BusinessEntity.cs" />
     <Compile Include="BusinessEntityAddress.cs" />
     <Compile Include="BusinessEntityContact.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="ContactType.cs" />
     <Compile Include="CountryRegion.cs" />
     <Compile Include="CountryRegionCurrency.cs" />

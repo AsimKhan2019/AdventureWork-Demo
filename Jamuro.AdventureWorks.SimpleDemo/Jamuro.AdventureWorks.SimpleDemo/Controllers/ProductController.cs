@@ -36,5 +36,32 @@ namespace Jamuro.AdventureWorks.SimpleDemo.Controllers
             viewModel.Products = model;
             return View("AllProductsWithIncludesNoTracking", viewModel);
         }
+
+        public ActionResult GetAllProductsWithCheckAllAny()
+        {
+            ProductWorker productWorker = new ProductWorker();
+            var model = productWorker.GetAllProductsWithCheckAllAny();
+            ProductViewModel viewModel = new ProductViewModel();
+            viewModel.Products = model;
+            return View("AllProductsWithCheckAllAny", viewModel);
+        }
+
+        public ActionResult GetAllProductsWithCheckAllCount()
+        {
+            ProductWorker productWorker = new ProductWorker();
+            var model = productWorker.GetAllProductsWithCheckAllCount();
+            ProductViewModel viewModel = new ProductViewModel();
+            viewModel.Products = model;
+            return View("AllProductsWithCheckAllCount", viewModel);
+        }
+
+        public ActionResult GetAllProductsWithCheckOne()
+        {
+            ProductWorker productWorker = new ProductWorker();
+            var model = productWorker.GetAllProductsWithCheckOne();
+            ProductViewModel viewModel = new ProductViewModel();
+            viewModel.Products = model;
+            return View("AllProductsWithCheckOne", viewModel);
+        }
     }
 }
