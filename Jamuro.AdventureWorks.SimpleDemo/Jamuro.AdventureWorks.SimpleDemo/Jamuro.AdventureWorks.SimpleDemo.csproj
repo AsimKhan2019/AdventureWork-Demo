@@ -218,15 +218,16 @@
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Error\Error.cshtml" />
     <Content Include="Views\Error\InternalError.cshtml" />
-    <Content Include="Views\Product\AllProducts.cshtml" />
-    <Content Include="Views\Product\AllProductsWithIncludes.cshtml" />
-    <Content Include="Views\Product\AllProductsWithIncludesNoTracking.cshtml" />
-    <Content Include="Views\Product\_ProductList.cshtml" />
-    <Content Include="Views\Product\AllProductsWithCheckAllAny.cshtml" />
-    <Content Include="Views\Product\AllProductsWithCheckOne.cshtml" />
-    <Content Include="Views\Product\AllProductsWithCheckAllCount.cshtml" />
+    <Content Include="Views\Product\AllBikes.cshtml" />
+    <Content Include="Views\Product\AllBikesWithIncludes.cshtml" />
+    <Content Include="Views\Product\AllBikesWithIncludesNoTracking.cshtml" />
+    <Content Include="Views\Product\_BikesList.cshtml" />
+    <Content Include="Views\Product\AllBikesWithCheckAllAny.cshtml" />
+    <Content Include="Views\Product\AllBikesWithCheckOne.cshtml" />
+    <Content Include="Views\Product\AllBikesWithCheckAllCount.cshtml" />
     <Content Include="Views\Help\EntityFramework.cshtml" />
     <Content Include="Views\Help\Linq.cshtml" />
+    <Content Include="Views\Product\AllBikesWithCheckExists.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

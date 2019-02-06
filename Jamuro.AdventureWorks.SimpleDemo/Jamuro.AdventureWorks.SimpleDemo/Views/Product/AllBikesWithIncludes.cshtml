@@ -6,9 +6,8 @@
     ViewBag.Title = Model.Title();
 }
 
-<h1>All Products with check for existence by retrieving only one record</h1>
-<h2>Affected by N+1 Problem</h2>
-<h2>Very little affected when checking pre-existence of rows</h2>
+<h1>All Products with Includes</h1>
+<h2>Avoid N+1 Problem</h2>
 
 @section ElapsedTime{
     <hr/>
@@ -17,5 +16,4 @@
 }
 
 <hr />
-@Html.Partial("_ProductList", Model)
-
+@Html.Partial("_BikesList", Model)

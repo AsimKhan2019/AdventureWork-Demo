@@ -11,10 +11,18 @@ namespace Jamuro.AdventureWorks.Services.Workers.Interfaces
 {
     public interface IProductWorker
     {
-        IEnumerable<Models.Product> GetAllProducts();
+        IEnumerable<Models.Product> GetAllBikes();
 
-        IEnumerable<Models.Product> GetAllProductsWithIncludes();
+        IEnumerable<Models.Product> GetAllBikesWithIncludes();
 
-        IEnumerable<Models.Product> GetAllProductsWithIncludesNoTracking();
+        IEnumerable<Models.Product> GetAllBikesWithIncludesNoTracking();
+
+        IEnumerable<Models.Product> GetAllBikesWithCheckExists();
+
+        IEnumerable<Models.Product> GetAllBikesWithCheckOne();
+
+        IEnumerable<Models.Product> GetAllBikesWithCheckAllCount();
+
+        IEnumerable<Models.Product> GetAllBikesWithCheckAllAny();
     }
 }

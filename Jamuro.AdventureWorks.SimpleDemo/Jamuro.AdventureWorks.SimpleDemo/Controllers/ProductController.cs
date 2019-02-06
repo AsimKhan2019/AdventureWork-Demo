@@ -5,63 +5,75 @@ using System.Web;
 using System.Web.Mvc;
 using Jamuro.AdventureWorks.SimpleDemo.ViewModels;
 using Jamuro.AdventureWorks.Services.Workers;
+using Jamuro.AdventureWorks.Services.Workers.Interfaces;
 
 namespace Jamuro.AdventureWorks.SimpleDemo.Controllers
 {
     public class ProductController : Controller
     {
-        public ActionResult GetAllProducts()
+        public ActionResult GetAllBikes()
         {
-            ProductWorker productWorker = new ProductWorker();
-            var model = productWorker.GetAllProducts();
+            IProductWorker productWorker = new ProductWorker();
+            var model = productWorker.GetAllBikes();
             ProductViewModel viewModel = new ProductViewModel();
             viewModel.Products = model;
-            return View("AllProducts", viewModel);
+            return View("AllBikes", viewModel);
         }
 
-        public ActionResult GetAllProductsWithIncludes()
+        public ActionResult GetAllBikesWithIncludes()
         {
-            ProductWorker productWorker = new ProductWorker();
-            var model = productWorker.GetAllProductsWithIncludes();
+            IProductWorker productWorker = new ProductWorker();
+            var model = productWorker.GetAllBikesWithIncludes();
             ProductViewModel viewModel = new ProductViewModel();
             viewModel.Products = model;
-            return View("AllProductsWithIncludes", viewModel);
+            return View("AllBikesWithIncludes", viewModel);
         }
 
-        public ActionResult GetAllProductsWithIncludesNoTracking()
+        public ActionResult GetAllBikesWithIncludesNoTracking()
         {
-            ProductWorker productWorker = new ProductWorker();
-            var model = productWorker.GetAllProductsWithIncludesNoTracking();
+            IProductWorker productWorker = new ProductWorker();
+            var model = productWorker.GetAllBikesWithIncludesNoTracking();
             ProductViewModel viewModel = new ProductViewModel();
             viewModel.Products = model;
-            return View("AllProductsWithIncludesNoTracking", viewModel);
+            return View("AllBikesWithIncludesNoTracking", viewModel);
         }
 
-        public ActionResult GetAllProductsWithCheckAllAny()
+        public ActionResult GetAllBikesWithCheckAllAny()
         {
-            ProductWorker productWorker = new ProductWorker();
-            var model = productWorker.GetAllProductsWithCheckAllAny();
+            IProductWorker productWorker = new ProductWorker();
+            var model = productWorker.GetAllBikesWithCheckAllAny();
             ProductViewModel viewModel = new ProductViewModel();
             viewModel.Products = model;
-            return View("AllProductsWithCheckAllAny", viewModel);
+            return View("AllBikesWithCheckAllAny", viewModel);
         }
 
-        public ActionResult GetAllProductsWithCheckAllCount()
+        public ActionResult GetAllBikesWithCheckAllCount()
         {
-            ProductWorker productWorker = new ProductWorker();
-            var model = productWorker.GetAllProductsWithCheckAllCount();
+            IProductWorker productWorker = new ProductWorker();
+            var model = productWorker.GetAllBikesWithCheckAllCount();
             ProductViewModel viewModel = new ProductViewModel();
             viewModel.Products = model;
-            return View("AllProductsWithCheckAllCount", viewModel);
+            return View("AllBikesWithCheckAllCount", viewModel);
         }
 
-        public ActionResult GetAllProductsWithCheckOne()
+        public ActionResult GetAllBikesWithCheckOne()
         {
-            ProductWorker productWorker = new ProductWorker();
-            var model = productWorker.GetAllProductsWithCheckOne();
+            IProductWorker productWorker = new ProductWorker();
+            var model = productWorker.GetAllBikesWithCheckOne();
             ProductViewModel viewModel = new ProductViewModel();
             viewModel.Products = model;
-            return View("AllProductsWithCheckOne", viewModel);
+            return View("AllBikesWithCheckOne", viewModel);
         }
+
+        public ActionResult GetAllBikesWithCheckExists()
+        {
+            IProductWorker productWorker = new ProductWorker();
+            var model = productWorker.GetAllBikesWithCheckExists();
+            ProductViewModel viewModel = new ProductViewModel();
+            viewModel.Products = model;
+            return View("AllBikesWithCheckExists", viewModel);
+        }
+
+        
     }
 }

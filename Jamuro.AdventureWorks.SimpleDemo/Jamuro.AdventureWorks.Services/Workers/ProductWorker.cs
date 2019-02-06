@@ -13,6 +13,7 @@ namespace Jamuro.AdventureWorks.Services.Workers
     public class ProductWorker : WorkerBase, IProductWorker
     {
         private readonly IEnumerable<Product> m_emptyProductList = new List<Product>() { };
+        private readonly int m_productCategoryBikes = 1;
 
         private IRepository<Product> ProductRepository { get { return this.UnitOfWork.GetRepository<Product>(); } }
 
@@ -73,45 +74,85 @@ namespace Jamuro.AdventureWorks.Services.Workers
           
         }
 
+        public IEnumerable<Models.Product> GetAllBikes()
+        {
+            return GenerateProductModel(ProductRepository.Exists(x => x.ProductSubcategory != null && x.ProductSubcategory.ProductCategoryID == m_productCategoryBikes) ? ProductRepository.Get(x => x.ProductSubcategory != null && x.ProductSubcategory.ProductCategoryID == m_productCategoryBikes) : m_emptyProductList);
+        }
+
         #region Bad ways of checking the existence of rows before retrieving them
 
-        public IEnumerable<Models.Product> GetAllProductsWithCheckAllCount()
+        public IEnumerable<Models.Product> GetAllBikesWithCheckAllCount()
         {
-            return GenerateProductModel(ProductRepository.GetAll().Count() > 0 ? ProductRepository.GetAll() : m_emptyProductList);
+            return GenerateProductModel(ProductRepository.GetAll().Count(x=> x.ProductSubcategory != null && x.ProductSubcategory.ProductCategoryID== m_productCategoryBikes) > 0 ? 
+                ProductRepository.Get(x => x.ProductSubcategory.ProductCategoryID == m_productCategoryBikes,
+                    false,
+                    null,
+                    x => x.ProductReview,
+                    x => x.ProductSubcategory.ProductCategory,
+                    x => x.ProductProductPhoto.Select(y => y.ProductPhoto)) :
+                m_emptyProductList);
         }
 
-        public IEnumerable<Models.Product> GetAllProductsWithCheckAllAny()
+        public IEnumerable<Models.Product> GetAllBikesWithCheckAllAny()
         {
-            return GenerateProductModel(ProductRepository.GetAll().Any() ? ProductRepository.GetAll() : m_emptyProductList);
+            return GenerateProductModel(ProductRepository.GetAll().Any(x => x.ProductSubcategory != null && x.ProductSubcategory.ProductCategoryID == m_productCategoryBikes) ? 
+                ProductRepository.Get(x => x.ProductSubcategory.ProductCategoryID == m_productCategoryBikes,
+                    false,
+                    null,
+                    x => x.ProductReview,
+                    x => x.ProductSubcategory.ProductCategory,
+                    x => x.ProductProductPhoto.Select(y => y.ProductPhoto)) :
+                m_emptyProductList);
         }
 
-        public IEnumerable<Models.Product> GetAllProductsWithCheckOne()
+        public IEnumerable<Models.Product> GetAllBikesWithCheckOne()
         {
-            return GenerateProductModel(ProductRepository.GetOne(x=>true) != null ? ProductRepository.GetAll() : m_emptyProductList);
+            return GenerateProductModel(ProductRepository.Get(x => x.ProductSubcategory != null && x.ProductSubcategory.ProductCategoryID == m_productCategoryBikes).Any() ? 
+                ProductRepository.Get(x => x.ProductSubcategory.ProductCategoryID == m_productCategoryBikes,
+                    false,
+                    null,
+                    x => x.ProductReview,
+                    x => x.ProductSubcategory.ProductCategory,
+                    x => x.ProductProductPhoto.Select(y => y.ProductPhoto)) :
+                m_emptyProductList);
+        }
+        
+
+        public IEnumerable<Models.Product> GetAllBikesWithCheckExists()
+        {
+            return GenerateProductModel(ProductRepository.Exists(x => x.ProductSubcategory != null && x.ProductSubcategory.ProductCategoryID == m_productCategoryBikes) ?
+                ProductRepository.Get(x => x.ProductSubcategory.ProductCategoryID == m_productCategoryBikes,
+                    false,
+                    null,
+                    x => x.ProductReview,
+                    x => x.ProductSubcategory.ProductCategory,
+                    x => x.ProductProductPhoto.Select(y => y.ProductPhoto)) :
+                m_emptyProductList);
         }
 
         #endregion
 
-        public IEnumerable<Models.Product> GetAllProducts()
-        {
-            return GenerateProductModel(ProductRepository.Exists() ? ProductRepository.GetAll() : m_emptyProductList);
-        }
 
-        public IEnumerable<Models.Product> GetAllProductsWithIncludes()
+
+        public IEnumerable<Models.Product> GetAllBikesWithIncludes()
         {
-            return GenerateProductModel(ProductRepository.Exists() ? 
-                ProductRepository.GetAll(false,
+            return GenerateProductModel(ProductRepository.Exists(x => x.ProductSubcategory != null && x.ProductSubcategory.ProductCategoryID == m_productCategoryBikes) ? 
+                ProductRepository.Get(x => x.ProductSubcategory.ProductCategoryID == m_productCategoryBikes,
+                    false,
+                    null,
                     x => x.ProductReview,
                     x => x.ProductSubcategory.ProductCategory,
                     x => x.ProductProductPhoto.Select(y => y.ProductPhoto)) : 
                 m_emptyProductList);
         }
 
-        public IEnumerable<Models.Product> GetAllProductsWithIncludesNoTracking()
+        public IEnumerable<Models.Product> GetAllBikesWithIncludesNoTracking()
         {
-            return GenerateProductModel(ProductRepository.Exists() ? 
-                ProductRepository.GetAll(true, 
-                    x=>x.ProductReview, 
+            return GenerateProductModel(ProductRepository.Exists(x => x.ProductSubcategory != null && x.ProductSubcategory.ProductCategoryID == m_productCategoryBikes) ? 
+                ProductRepository.Get(x => x.ProductSubcategory.ProductCategoryID == m_productCategoryBikes,
+                    true,
+                    null,
+                    x =>x.ProductReview, 
                     x=>x.ProductSubcategory.ProductCategory, 
                     x=>x.ProductProductPhoto.Select(y=>y.ProductPhoto)) : 
                 m_emptyProductList);
