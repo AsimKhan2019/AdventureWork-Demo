@@ -1,5 +1,47 @@
 ﻿@using Jamuro.AdventureWorks.Resources
 
 @model Jamuro.AdventureWorks.SimpleDemo.ViewModels.ProductViewModel
+@{
+    int counter = 1;
+}
 
-<p>Product List Pending to Implement</p>
+<div class="container">
+    @foreach (var product in Model.Products)
+    {
+        if (counter == 1 || (counter > 1 && counter % 3 == 1))
+        {
+            @Html.Raw("<div class='row'>")
+        }
+
+        <div class="col-md-4 product-item-container">
+            <div class="product-item">
+                <div class="product-data">
+                    <h3>@Html.DisplayTextFor(x => product.Name)</h3>
+                    <p>
+                        Number: @Html.DisplayTextFor(x => product.ProductNumber)<br />
+                        Category: @Html.DisplayTextFor(x => product.ProductCategory.CategoryName) - @Html.DisplayTextFor(x => product.ProductCategory.SubcategoryName)<br />
+                    </p>
+                    <div class="product-image-container">
+                        @if (product.ProductPhoto.Any())
+                    {
+                        var base64 = Convert.ToBase64String(product.ProductPhoto.FirstOrDefault().LargePhoto);
+                        var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                    <p class="text-center"><img src="@imgSrc"></p>
+                    }
+                    else
+                    {
+                    <p>Not photo available yet</p>
+                    }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        if (counter > 1 && counter % 3 == 0)
+        {
+            @Html.Raw("</div>")
+        }
+
+        counter++;
+    }
+</div>

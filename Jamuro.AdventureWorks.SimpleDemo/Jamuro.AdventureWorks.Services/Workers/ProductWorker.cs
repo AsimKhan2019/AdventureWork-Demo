@@ -40,6 +40,7 @@ namespace Jamuro.AdventureWorks.Services.Workers
                     category.ProductSubcategoryId = p.ProductSubcategory.ProductSubcategoryID;
                     category.SubcategoryName = p.ProductSubcategory.Name;
                 }
+                productModel.ProductCategory = category;
 
                 /* Get Photos */
                 foreach (ProductProductPhoto x in p.ProductProductPhoto)
@@ -47,8 +48,10 @@ namespace Jamuro.AdventureWorks.Services.Workers
                     Models.ProductPhoto productPhoto = new Models.ProductPhoto();
                     productPhoto.ProductPhotoID = x.ProductPhoto.ProductPhotoID;
                     productPhoto.ThumbNailPhoto = x.ProductPhoto.ThumbNailPhoto;
+                    productPhoto.LargePhoto = x.ProductPhoto.LargePhoto;
+                    productModel.ProductPhoto.Add(productPhoto);
                 }
-
+                
                 /* Get Reviews */
                 foreach (ProductReview x in p.ProductReview)
                 {
@@ -56,6 +59,7 @@ namespace Jamuro.AdventureWorks.Services.Workers
                     productReview.ProductReviewID = x.ProductReviewID;
                     productReview.Comments = x.Comments;
                     productReview.Rating = x.Rating;
+                    productModel.ProductReview.Add(productReview);
                 }
 
                 productsModel.Add(productModel);

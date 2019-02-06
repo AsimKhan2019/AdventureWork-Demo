@@ -16,5 +16,8 @@ namespace Jamuro.AdventureWorks.Models
         public int ProductPhotoID { get; set; }
 
         public byte[] ThumbNailPhoto { get; set; }
+
+        public byte[] LargePhoto { get; set; }
+
     }
 }

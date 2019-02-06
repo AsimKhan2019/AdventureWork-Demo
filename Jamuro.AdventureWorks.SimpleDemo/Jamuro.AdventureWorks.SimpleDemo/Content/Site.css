@@ -29,3 +29,22 @@ p.elapsed-time{
     padding: 2px 10px;
     font-size: 1.5em;
 }
+
+.product-item{
+    border:2px solid #86bc25;
+    margin:15px 5px;
+    
+}
+
+.product-data{
+    margin:10px;
+    min-height:250px;
+    padding:10px;
+    background-color:#eee;
+}
+
+.product-image-container{
+    background-color: #fff!important;
+    min-height:100px;
+    padding:10px;
+}
