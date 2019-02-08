@@ -29,6 +29,8 @@ namespace Jamuro.AdventureWorks.Data.DAL.Interfaces
 
         IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> where, bool setAsNoTracking, int? maxNumberOfEntities, params Expression<Func<TEntity, object>>[] includes);
 
+        IEnumerable<TEntity> GetWithSort<TKeySort>(Expression<Func<TEntity, bool>> where, bool setAsNoTracking, int? maxNumberOfEntities, Expression<Func<TEntity, TKeySort>> orderBy, bool descendingOrderBy = false, params Expression<Func<TEntity, object>>[] includes);
+
         IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> where, bool setAsNoTracking, int? maxNumberOfEntities, string[] includes);
 
         TEntity GetOne(Expression<Func<TEntity, bool>> where);

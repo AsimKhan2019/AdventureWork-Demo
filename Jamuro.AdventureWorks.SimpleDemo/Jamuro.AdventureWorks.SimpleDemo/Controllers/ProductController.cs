@@ -11,10 +11,17 @@ namespace Jamuro.AdventureWorks.SimpleDemo.Controllers
 {
     public class ProductController : Controller
     {
+        public readonly IProductWorker m_productWorker;
+
+        public ProductController(IProductWorker productWorker):base()
+        {
+            m_productWorker = productWorker;
+        }
+
+
         public ActionResult GetAllBikes()
         {
-            IProductWorker productWorker = new ProductWorker();
-            var model = productWorker.GetAllBikes();
+            var model = m_productWorker.GetAllBikes();
             ProductViewModel viewModel = new ProductViewModel();
             viewModel.Products = model;
             return View("AllBikes", viewModel);
@@ -22,8 +29,7 @@ namespace Jamuro.AdventureWorks.SimpleDemo.Controllers
 
         public ActionResult GetAllBikesWithIncludes()
         {
-            IProductWorker productWorker = new ProductWorker();
-            var model = productWorker.GetAllBikesWithIncludes();
+            var model = m_productWorker.GetAllBikesWithIncludes();
             ProductViewModel viewModel = new ProductViewModel();
             viewModel.Products = model;
             return View("AllBikesWithIncludes", viewModel);
@@ -31,8 +37,7 @@ namespace Jamuro.AdventureWorks.SimpleDemo.Controllers
 
         public ActionResult GetAllBikesWithIncludesNoTracking()
         {
-            IProductWorker productWorker = new ProductWorker();
-            var model = productWorker.GetAllBikesWithIncludesNoTracking();
+            var model = m_productWorker.GetAllBikesWithIncludesNoTracking();
             ProductViewModel viewModel = new ProductViewModel();
             viewModel.Products = model;
             return View("AllBikesWithIncludesNoTracking", viewModel);
@@ -40,8 +45,7 @@ namespace Jamuro.AdventureWorks.SimpleDemo.Controllers
 
         public ActionResult GetAllBikesWithCheckAllAny()
         {
-            IProductWorker productWorker = new ProductWorker();
-            var model = productWorker.GetAllBikesWithCheckAllAny();
+            var model = m_productWorker.GetAllBikesWithCheckAllAny();
             ProductViewModel viewModel = new ProductViewModel();
             viewModel.Products = model;
             return View("AllBikesWithCheckAllAny", viewModel);
@@ -49,8 +53,7 @@ namespace Jamuro.AdventureWorks.SimpleDemo.Controllers
 
         public ActionResult GetAllBikesWithCheckAllCount()
         {
-            IProductWorker productWorker = new ProductWorker();
-            var model = productWorker.GetAllBikesWithCheckAllCount();
+            var model = m_productWorker.GetAllBikesWithCheckAllCount();
             ProductViewModel viewModel = new ProductViewModel();
             viewModel.Products = model;
             return View("AllBikesWithCheckAllCount", viewModel);
@@ -58,8 +61,7 @@ namespace Jamuro.AdventureWorks.SimpleDemo.Controllers
 
         public ActionResult GetAllBikesWithCheckOne()
         {
-            IProductWorker productWorker = new ProductWorker();
-            var model = productWorker.GetAllBikesWithCheckOne();
+            var model = m_productWorker.GetAllBikesWithCheckOne();
             ProductViewModel viewModel = new ProductViewModel();
             viewModel.Products = model;
             return View("AllBikesWithCheckOne", viewModel);
@@ -67,13 +69,11 @@ namespace Jamuro.AdventureWorks.SimpleDemo.Controllers
 
         public ActionResult GetAllBikesWithCheckExists()
         {
-            IProductWorker productWorker = new ProductWorker();
-            var model = productWorker.GetAllBikesWithCheckExists();
+            var model = m_productWorker.GetAllBikesWithCheckExists();
             ProductViewModel viewModel = new ProductViewModel();
             viewModel.Products = model;
             return View("AllBikesWithCheckExists", viewModel);
         }
 
-        
     }
 }

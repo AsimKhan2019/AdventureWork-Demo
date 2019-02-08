@@ -17,12 +17,12 @@ namespace Jamuro.AdventureWorks.SimpleDemo
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+            Services.UnityBootstrapper.Init();
+            UnityConfig.RegisterComponents();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
-
-            
+            BundleConfig.RegisterBundles(BundleTable.Bundles); 
         }
 
         protected void Application_EndRequest()
@@ -55,6 +55,13 @@ namespace Jamuro.AdventureWorks.SimpleDemo
 
                 #endregion
             }
+        }
+
+        protected void Application_Error()
+        {
+            Exception ex = Server.GetLastError();
+            log4net.ILog logger = log4net.LogManager.GetLogger("ApplicationError");
+            logger.Error(ex.Message, ex);
         }
     }
 }

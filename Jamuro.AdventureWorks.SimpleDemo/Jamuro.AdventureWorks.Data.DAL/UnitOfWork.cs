@@ -6,10 +6,7 @@ using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Validation;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-using Jamuro.AdventureWorks.Data.Entities;
 using Jamuro.AdventureWorks.Data.DAL.Interfaces;
 
 namespace Jamuro.AdventureWorks.Data.DAL
@@ -17,8 +14,8 @@ namespace Jamuro.AdventureWorks.Data.DAL
     public class UnitOfWork<TContext> : IUnitOfWork, IDisposable
      where TContext : DbContext
     {
-        private ConcurrentDictionary<Type, object> m_repositories;
-        private IDbContextFactory<TContext> m_contextFactory;
+        private readonly ConcurrentDictionary<Type, object> m_repositories;
+        private readonly IDbContextFactory<TContext> m_contextFactory;
         private TContext m_context;
         private bool m_isDisposed;
 

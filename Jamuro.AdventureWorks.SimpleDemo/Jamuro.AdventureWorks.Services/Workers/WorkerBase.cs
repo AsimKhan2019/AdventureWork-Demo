@@ -15,16 +15,11 @@ namespace Jamuro.AdventureWorks.Services.Workers
 
         public WorkerBase()
         {
-            /* TODO. Implement dependency injection */
+            //TODO. Create new constructor for getting Unit of Work by using IoC
             this.UnitOfWork = new UnitOfWork<AdventureWorksContext>(new DBAdventureWorksFactory());
         }
 
-        public WorkerBase(IUnitOfWork uow)
-        {
-            this.UnitOfWork = uow;
-        }
-
-        protected IUnitOfWork UnitOfWork { get; private set; }
+        protected IUnitOfWork UnitOfWork { get; set; }
 
 
         public bool CheckDB()

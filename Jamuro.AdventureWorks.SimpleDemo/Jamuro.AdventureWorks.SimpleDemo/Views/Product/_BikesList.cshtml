@@ -20,6 +20,7 @@
                     <p>
                         Number: @Html.DisplayTextFor(x => product.ProductNumber)<br />
                         Category: @Html.DisplayTextFor(x => product.ProductCategory.CategoryName) - @Html.DisplayTextFor(x => product.ProductCategory.SubcategoryName)<br />
+                        Price: @Html.DisplayTextFor(x => product.ListPrice)<br />
                     </p>
                     <div class="product-image-container">
                         @if (product.ProductPhoto.Any())
@@ -44,4 +45,7 @@
 
         counter++;
     }
+</div>
+<div>
+    Total Bikes: @Model.Products.Count()
 </div>

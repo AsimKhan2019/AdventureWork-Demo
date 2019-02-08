@@ -144,7 +144,7 @@ namespace Jamuro.AdventureWorks.Data.DAL
         public virtual IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> where,
             bool setAsNoTracking,
             int? maxNumberOfEntities,
-            params Expression<Func<TEntity, object>>[] includes
+            params Expression<Func<TEntity, object>>[] includes            
             )
         {
             
@@ -166,6 +166,28 @@ namespace Jamuro.AdventureWorks.Data.DAL
                 query = query.Include(include);
 
             return maxNumberOfEntities != null && maxNumberOfEntities.Value > 0 ? query.Take(maxNumberOfEntities.Value).ToList() : query.ToList();
+        }
+
+        public virtual IEnumerable<TEntity> GetWithSort<TKeySort>(Expression<Func<TEntity, bool>> where,
+            bool setAsNoTracking,
+            int? maxNumberOfEntities,
+            Expression<Func<TEntity, TKeySort>> orderBy,
+            bool descendingOrderBy = false,
+            params Expression<Func<TEntity, object>>[] includes
+            )
+        {
+
+            IQueryable<TEntity> query = setAsNoTracking ? this.Context.Set<TEntity>().AsNoTracking().Where(where) : this.Context.Set<TEntity>().Where(where);
+
+            foreach (var include in includes)
+                query = query.Include(include);
+
+            if (orderBy != null)
+            {
+                query = descendingOrderBy ? query.OrderByDescending(orderBy) : query.OrderBy(orderBy);
+            }
+
+            return maxNumberOfEntities != null && maxNumberOfEntities.Value > 0 ? query.Take(maxNumberOfEntities.Value).OrderBy(orderBy).ToList() : query.ToList();
         }
 
         #endregion
