@@ -187,7 +187,30 @@ namespace Jamuro.AdventureWorks.Data.DAL
                 query = descendingOrderBy ? query.OrderByDescending(orderBy) : query.OrderBy(orderBy);
             }
 
-            return maxNumberOfEntities != null && maxNumberOfEntities.Value > 0 ? query.Take(maxNumberOfEntities.Value).OrderBy(orderBy).ToList() : query.ToList();
+            return maxNumberOfEntities != null && maxNumberOfEntities.Value > 0 ? query.Take(maxNumberOfEntities.Value).ToList() : query.ToList();
+        }
+
+
+        public virtual IEnumerable<TOutputModel> GetWithNewOutputModel<TKeySort, TOutputModel>(Expression<Func<TEntity, bool>> where,
+            bool setAsNoTracking,
+            int? maxNumberOfEntities,            
+            Expression<Func<TEntity, TOutputModel>> selectOutputModel,
+            Expression<Func<TEntity, TKeySort>> orderBy,
+            bool descendingOrderBy = false,
+            params Expression<Func<TEntity, object>>[] includes)
+        {
+            IQueryable<TEntity> query = setAsNoTracking ? this.Context.Set<TEntity>().AsNoTracking().Where(where) : this.Context.Set<TEntity>().Where(where);
+            foreach (var include in includes)
+                query = query.Include(include);
+
+            if (orderBy != null)
+            {
+                query = descendingOrderBy ? query.OrderByDescending(orderBy) : query.OrderBy(orderBy);
+            }
+
+            query = maxNumberOfEntities != null && maxNumberOfEntities.Value > 0 ? query.Take(maxNumberOfEntities.Value) : query;
+
+            return query.Select(selectOutputModel).ToList();
         }
 
         #endregion
