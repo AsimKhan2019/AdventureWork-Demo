@@ -168,7 +168,7 @@ namespace Jamuro.AdventureWorks.Data.DAL
             return maxNumberOfEntities != null && maxNumberOfEntities.Value > 0 ? query.Take(maxNumberOfEntities.Value).ToList() : query.ToList();
         }
 
-        public virtual IEnumerable<TEntity> GetWithSort<TKeySort>(Expression<Func<TEntity, bool>> where,
+        public virtual IEnumerable<TEntity> Get<TKeySort>(Expression<Func<TEntity, bool>> where,
             bool setAsNoTracking,
             int? maxNumberOfEntities,
             Expression<Func<TEntity, TKeySort>> orderBy,
@@ -190,8 +190,22 @@ namespace Jamuro.AdventureWorks.Data.DAL
             return maxNumberOfEntities != null && maxNumberOfEntities.Value > 0 ? query.Take(maxNumberOfEntities.Value).ToList() : query.ToList();
         }
 
+        public virtual IEnumerable<TOutputModel> GetWithOutputModel<TOutputModel>(Expression<Func<TEntity, bool>> where,
+            bool setAsNoTracking,
+            int? maxNumberOfEntities,
+            Expression<Func<TEntity, TOutputModel>> selectOutputModel,
+            params Expression<Func<TEntity, object>>[] includes)
+        {
+            IQueryable<TEntity> query = setAsNoTracking ? this.Context.Set<TEntity>().AsNoTracking().Where(where) : this.Context.Set<TEntity>().Where(where);
+            foreach (var include in includes)
+                query = query.Include(include);
 
-        public virtual IEnumerable<TOutputModel> GetWithNewOutputModel<TKeySort, TOutputModel>(Expression<Func<TEntity, bool>> where,
+            query = maxNumberOfEntities != null && maxNumberOfEntities.Value > 0 ? query.Take(maxNumberOfEntities.Value) : query;
+
+            return query.Select(selectOutputModel).ToList();
+        }
+
+        public virtual IEnumerable<TOutputModel> GetWithOutputModel<TKeySort, TOutputModel>(Expression<Func<TEntity, bool>> where,
             bool setAsNoTracking,
             int? maxNumberOfEntities,            
             Expression<Func<TEntity, TOutputModel>> selectOutputModel,

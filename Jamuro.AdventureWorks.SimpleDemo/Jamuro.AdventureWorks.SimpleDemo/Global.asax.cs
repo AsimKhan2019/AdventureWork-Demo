@@ -55,6 +55,20 @@ namespace Jamuro.AdventureWorks.SimpleDemo
 
                 #endregion
             }
+            else if (Context.Response.StatusCode == 400)
+            {
+                #region Bad Request
+
+                Response.Clear();
+                RouteData rd = new RouteData();
+                rd.Values["controller"] = "Error";
+                rd.Values["action"] = "Error";
+                rd.Values["url"] = Context.Request.Url;
+                IController c = new ErrorController();
+                c.Execute(new RequestContext(new HttpContextWrapper(Context), rd));
+
+                #endregion
+            }
         }
 
         protected void Application_Error()

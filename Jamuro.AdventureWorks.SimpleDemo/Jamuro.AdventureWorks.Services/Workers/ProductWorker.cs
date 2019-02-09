@@ -30,8 +30,7 @@ namespace Jamuro.AdventureWorks.Services.Workers
                 productModel.ProductID = p.ProductID;
                 productModel.Name = p.Name;
                 productModel.ProductNumber = p.ProductNumber;
-                productModel.ProductLine = p.ProductLine;
-                productModel.Style = p.Style;
+                productModel.Color = p.Color;
                 productModel.ListPrice = p.ListPrice;
                 #endregion
 
@@ -55,7 +54,6 @@ namespace Jamuro.AdventureWorks.Services.Workers
                 {
                     Models.ProductPhoto productPhoto = new Models.ProductPhoto();
                     productPhoto.ProductPhotoID = x.ProductPhoto.ProductPhotoID;
-                    productPhoto.ThumbNailPhoto = x.ProductPhoto.ThumbNailPhoto;
                     productPhoto.LargePhoto = x.ProductPhoto.LargePhoto;
                     productModel.ProductPhoto.Add(productPhoto);
                 }
@@ -176,33 +174,54 @@ namespace Jamuro.AdventureWorks.Services.Workers
                 m_emptyProductList);
         }
 
-        public IEnumerable<Models.Product> GetMostExpensiveBikesWithTopInjectedInSQL(int maxNumber)
+        public IEnumerable<Models.Product> GetAllBikesWithAllImprovements()
         {
-            return GenerateProductModel(ProductRepository.Exists(x => x.ProductSubcategory != null && x.ProductSubcategory.ProductCategoryID == m_productCategoryBikes) ?
-                ProductRepository.GetWithSort(x => x.ProductSubcategory.ProductCategoryID == m_productCategoryBikes,
+            var model = ProductRepository.GetWithOutputModel<Models.Product>(x => x.ProductSubcategory.ProductCategoryID == m_productCategoryBikes,
                     true,
-                    maxNumber,
-                    s => s.ListPrice,
-                    true,
+                    null,
+                    x => new Models.Product() { ProductID = x.ProductID, ListPrice = x.ListPrice, Name = x.Name, ProductNumber = x.ProductNumber, Color = x.Color,
+                        ProductCategory = new Models.ProductCategory { CategoryName = x.ProductSubcategory.ProductCategory.Name, SubcategoryName = x.ProductSubcategory.Name, ProductCategoryId = x.ProductSubcategory.ProductCategoryID, ProductSubcategoryId = x.ProductSubcategoryID},
+                        ProductPhoto = (from y in x.ProductProductPhoto select new Models.ProductPhoto() { ProductPhotoID = y.ProductPhotoID, LargePhoto = y.ProductPhoto.LargePhoto}).ToList(),
+                        ProductReview = (from y in x.ProductReview select new Models.ProductReview() { Comments=y.Comments, Rating=y.Rating, EmailAddress=y.EmailAddress, ReviewerName=y.ReviewerName, ReviewDate=y.ReviewDate, ProductID = y.ProductID, ProductReviewID = y.ProductReviewID}).ToList()
+                    },
                     x => x.ProductReview,
                     x => x.ProductSubcategory.ProductCategory,
-                    x => x.ProductProductPhoto.Select(y => y.ProductPhoto)) :
-                m_emptyProductList);
+                    x => x.ProductProductPhoto.Select(y => y.ProductPhoto));
+            return model;
         }
 
-
-        public IEnumerable<Models.Product> GetMostExpensiveBikes(int maxNumber)
+        public IEnumerable<Models.Product> GetMostExpensiveBikes(int maxNumber, bool topInjectedInSQL)
         {
-            return GenerateProductModel(ProductRepository.Exists(x => x.ProductSubcategory != null && x.ProductSubcategory.ProductCategoryID == m_productCategoryBikes) ?
-                ProductRepository.Get(x => x.ProductSubcategory.ProductCategoryID == m_productCategoryBikes,
-                                    true,
-                                    null,
-                                    x => x.ProductReview,
-                                    x => x.ProductSubcategory.ProductCategory,
-                                    x => x.ProductProductPhoto.Select(y => y.ProductPhoto))                                
-                                 .OrderByDescending(x => x.ListPrice)
-                                 .Take(maxNumber) :
-                m_emptyProductList);
+            if (topInjectedInSQL)
+            {
+                #region Top Sentence injected in SQL
+
+                return GenerateProductModel(ProductRepository.Exists(x => x.ProductSubcategory != null && x.ProductSubcategory.ProductCategoryID == m_productCategoryBikes) ?
+                   ProductRepository.Get(x => x.ProductSubcategory.ProductCategoryID == m_productCategoryBikes,
+                       true,
+                       maxNumber,
+                       s => s.ListPrice,
+                       true,
+                       x => x.ProductReview,
+                       x => x.ProductSubcategory.ProductCategory,
+                       x => x.ProductProductPhoto.Select(y => y.ProductPhoto)) :
+                   m_emptyProductList);
+
+                #endregion
+            }
+            else
+            {
+                return GenerateProductModel(ProductRepository.Exists(x => x.ProductSubcategory != null && x.ProductSubcategory.ProductCategoryID == m_productCategoryBikes) ?
+                    ProductRepository.Get(x => x.ProductSubcategory.ProductCategoryID == m_productCategoryBikes,
+                                        true,
+                                        null,
+                                        x => x.ProductReview,
+                                        x => x.ProductSubcategory.ProductCategory,
+                                        x => x.ProductProductPhoto.Select(y => y.ProductPhoto))
+                                     .OrderByDescending(x => x.ListPrice)
+                                     .Take(maxNumber) :
+                    m_emptyProductList);
+            }
         }
     }
 }

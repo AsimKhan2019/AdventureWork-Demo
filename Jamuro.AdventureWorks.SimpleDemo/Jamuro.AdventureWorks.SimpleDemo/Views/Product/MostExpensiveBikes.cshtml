@@ -1,0 +1,21 @@
+﻿@using Jamuro.AdventureWorks.Resources
+
+@model Jamuro.AdventureWorks.SimpleDemo.ViewModels.ProductViewModel
+
+@{
+    ViewBag.Title = Model.Title();
+}
+
+<h1>Most Expensive Bikes</h1>
+<h2>@(ViewBag.TopInjectedInSQL ? $"SQL returning only top {ViewBag.MaxNumber} bikes" : $"Affected by bad SQL returning all products and then, filtering by {ViewBag.MaxNumber} most expensive")</h2>
+
+@section ElapsedTime{
+    <hr/>
+    <p class="elapsed-time"> @Html.Encode(ViewBag.elapsedTime) </p>
+    <hr/>
+}
+
+<hr />
+
+@Html.Partial("_BikesList", Model)
+

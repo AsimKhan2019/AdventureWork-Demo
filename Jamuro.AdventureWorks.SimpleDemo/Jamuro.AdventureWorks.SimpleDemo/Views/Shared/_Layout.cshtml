@@ -37,14 +37,14 @@
                             </li>
                             <li>
                                 <a href="@Url.Action("GetAllBikesWithIncludes", "Product")">
-                                    All Bikes - Add Includes to avoid N+1 Problem
+                                    All Bikes - Add Includes
                                     <span class="text-success">Good</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="@Url.Action("GetAllBikesWithIncludesNoTracking", "Product")">
-                                    All Bikes - Add Includes to avoid N+1 Problem + No Tracking
-                                    <span class="text-success"><strong>Best</strong></span>
+                                    All Bikes - Add Includes + No Tracking
+                                    <span class="text-success"><strong>Good</strong></span>
                                 </a>
                             </li>
                             <li role="separator" class="divider"></li>
@@ -53,25 +53,46 @@
                                 All Bikes - Check for existence with Count over all products
                                 <span class="text-danger"><strong>Bad</strong></span>
                             </a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("GetAllBikesWithCheckAllAny", "Product")">
-                            All Bikes - Check for existence with Any over all products
-                            <span class="text-danger"><strong>Bad</strong></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("GetAllBikesWithCheckOne", "Product")">
-                            All Bikes - Check for existence with Any over filter
-                            <span class="text-success">Good</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("GetAllBikesWithCheckExists", "Product")">
-                            All Bikes - Check for existence with Exists
-                            <span class="text-success"><strong>Best</strong></span>
-                        </a>
-                    </li>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("GetAllBikesWithCheckAllAny", "Product")">
+                                    All Bikes - Check for existence with Any over all products
+                                    <span class="text-danger"><strong>Bad</strong></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("GetAllBikesWithCheckOne", "Product")">
+                                    All Bikes - Check for existence with Any over filter
+                                    <span class="text-success">Good</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("GetAllBikesWithCheckExists", "Product")">
+                                    All Bikes - Check for existence with Exists
+                                    <span class="text-success"><strong>Good</strong></span>
+                                </a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="@Url.Action("GetMostExpensiveBikes", "Product", new { maxNumber=10, topInjectedInSQL = false})">
+                                    Top 10 Most Expensive Bikes
+                                    <span class="text-danger"><strong>Bad</strong></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("GetMostExpensiveBikes", "Product", new { maxNumber=10, topInjectedInSQL = true})">
+                                    Top 10 Most Expensive Bikes
+                                    <span class="text-success"><strong>Good</strong></span>
+                                </a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="@Url.Action("GetAllBikesWithAllImprovements", "Product")">
+                                    All Bikes - Add Includes + No Tracking + Restrict SQL Fields
+                                    <span class="text-success"><strong>Best</strong></span>
+                                </a>
+                            </li>
+                            
                 </ul>
                     </li>
                     <li class="dropdown">

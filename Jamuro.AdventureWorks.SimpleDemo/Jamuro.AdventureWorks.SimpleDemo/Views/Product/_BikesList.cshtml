@@ -19,8 +19,9 @@
                     <h3>@Html.DisplayTextFor(x => product.Name)</h3>
                     <p>
                         Number: @Html.DisplayTextFor(x => product.ProductNumber)<br />
-                        Category: @Html.DisplayTextFor(x => product.ProductCategory.CategoryName) - @Html.DisplayTextFor(x => product.ProductCategory.SubcategoryName)<br />
-                        Price: @Html.DisplayTextFor(x => product.ListPrice)<br />
+                        @Html.DisplayTextFor(x => product.ProductCategory.CategoryName) - @Html.DisplayTextFor(x => product.ProductCategory.SubcategoryName)<br />
+                        @Html.DisplayTextFor(x => product.Color)<br />
+                        Price: <span class="alert-success">@string.Format("{0:c}", product.ListPrice)</span><br />
                     </p>
                     <div class="product-image-container">
                         @if (product.ProductPhoto.Any())
@@ -28,11 +29,13 @@
                         var base64 = Convert.ToBase64String(product.ProductPhoto.FirstOrDefault().LargePhoto);
                         var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
                     <p class="text-center"><img src="@imgSrc"></p>
-                    }
-                    else
-                    {
+                    
+                        }
+                        else
+                        {
                     <p>Not photo available yet</p>
                     }
+                        <p class="text-center">@Html.ActionLink($"{product.ProductReview.Count()} comments", string.Empty) </p>
                     </div>
                 </div>
             </div>

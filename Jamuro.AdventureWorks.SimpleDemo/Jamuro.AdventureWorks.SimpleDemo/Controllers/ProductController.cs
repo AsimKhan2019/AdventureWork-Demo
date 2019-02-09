@@ -75,5 +75,22 @@ namespace Jamuro.AdventureWorks.SimpleDemo.Controllers
             return View("AllBikesWithCheckExists", viewModel);
         }
 
+        public ActionResult GetMostExpensiveBikes(int maxNumber=25, bool topInjectedInSQL=true)
+        {
+            var model = m_productWorker.GetMostExpensiveBikes(maxNumber, topInjectedInSQL);
+            ProductViewModel viewModel = new ProductViewModel();
+            viewModel.Products = model;
+            ViewBag.MaxNumber = maxNumber;
+            ViewBag.TopInjectedInSQL = topInjectedInSQL;
+            return View("MostExpensiveBikes", viewModel);
+        }
+
+        public ActionResult GetAllBikesWithAllImprovements()
+        {
+            var model = m_productWorker.GetAllBikesWithAllImprovements();
+            ProductViewModel viewModel = new ProductViewModel();
+            viewModel.Products = model;
+            return View("AllBikesWithAllImprovements", viewModel);
+        }
     }
 }

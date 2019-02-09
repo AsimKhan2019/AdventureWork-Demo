@@ -15,7 +15,7 @@ namespace Jamuro.AdventureWorks.Models
 
         public int ProductCategoryId { get; set; }
 
-        public int ProductSubcategoryId { get; set; }
+        public int? ProductSubcategoryId { get; set; }
 
         public string CategoryName { get; set; }
 

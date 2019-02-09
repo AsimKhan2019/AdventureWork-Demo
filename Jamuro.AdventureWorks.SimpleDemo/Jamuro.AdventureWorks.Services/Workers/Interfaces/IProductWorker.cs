@@ -17,6 +17,8 @@ namespace Jamuro.AdventureWorks.Services.Workers.Interfaces
 
         IEnumerable<Models.Product> GetAllBikesWithIncludesNoTracking();
 
+        IEnumerable<Models.Product> GetAllBikesWithAllImprovements();
+
         IEnumerable<Models.Product> GetAllBikesWithCheckExists();
 
         IEnumerable<Models.Product> GetAllBikesWithCheckOne();
@@ -24,5 +26,8 @@ namespace Jamuro.AdventureWorks.Services.Workers.Interfaces
         IEnumerable<Models.Product> GetAllBikesWithCheckAllCount();
 
         IEnumerable<Models.Product> GetAllBikesWithCheckAllAny();
+
+        IEnumerable<Models.Product> GetMostExpensiveBikes(int maxNumber, bool topInjectedInSQL);
+
     }
 }

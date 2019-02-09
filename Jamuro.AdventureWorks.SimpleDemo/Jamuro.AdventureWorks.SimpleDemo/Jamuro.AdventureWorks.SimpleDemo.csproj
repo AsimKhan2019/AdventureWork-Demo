@@ -273,6 +273,8 @@
     <Content Include="Views\Help\EntityFramework.cshtml" />
     <Content Include="Views\Help\Linq.cshtml" />
     <Content Include="Views\Product\AllBikesWithCheckExists.cshtml" />
+    <Content Include="Views\Product\MostExpensiveBikes.cshtml" />
+    <Content Include="Views\Product\AllBikesWithAllImprovements.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
