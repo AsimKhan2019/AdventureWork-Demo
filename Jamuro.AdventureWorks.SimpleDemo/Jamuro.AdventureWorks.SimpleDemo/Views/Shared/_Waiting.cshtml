@@ -1,0 +1,33 @@
+﻿@using Jamuro.AdventureWorks.Resources
+@using Jamuro.AdventureWorks.SimpleDemo.ViewModels
+
+@model WaitingWindowViewModel
+
+<style>
+    .preloader {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        width: 400px;
+        height: 250px;
+        margin-left: -200px;
+        margin-top: -125px;
+        z-index: 9999;
+        background-color: #fff;
+        border: 3px solid #ddd;
+        border-radius: 20px;
+        padding: 15px;
+    }
+</style>
+
+
+<div id="@Model.Name" name="@Model.Name" class="preloader text-center">
+    <div>
+        <p style="font-size:2em">@Model.Title</p>
+        <img src="/content/images/Preloader.gif" alt="@Labels.Waiting" style="margin:30px 10px;" />
+        <p style="font-size:1.8em">@Model.Message</p>
+    </div>
+</div>
+
+
+

@@ -124,7 +124,7 @@ namespace Jamuro.AdventureWorks.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Adventure Works Simple Demo.
+        ///   Looks up a localized string similar to Adventure Works Demo.
         /// </summary>
         public static string ApplicationName {
             get {
@@ -205,6 +205,15 @@ namespace Jamuro.AdventureWorks.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Loading.
+        /// </summary>
+        public static string Loading {
+            get {
+                return ResourceManager.GetString("Loading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Most Expensive Bikes.
         /// </summary>
         public static string MostExpensiveBikes {
@@ -264,6 +273,15 @@ namespace Jamuro.AdventureWorks.Resources {
         public static string SkipTracking {
             get {
                 return ResourceManager.GetString("SkipTracking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Waiting.
+        /// </summary>
+        public static string Waiting {
+            get {
+                return ResourceManager.GetString("Waiting", resourceCulture);
             }
         }
         

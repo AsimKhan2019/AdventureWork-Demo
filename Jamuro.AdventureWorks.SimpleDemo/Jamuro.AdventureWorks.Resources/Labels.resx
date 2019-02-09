@@ -130,7 +130,7 @@
     <value>and</value>
   </data>
   <data name="ApplicationName" xml:space="preserve">
-    <value>Adventure Works Simple Demo</value>
+    <value>Adventure Works Demo</value>
   </data>
   <data name="AvoidN1ProblemWithIncludes" xml:space="preserve">
     <value>Avoid N+1 Problem by using "Includes"</value>
@@ -188,5 +188,11 @@
   </data>
   <data name="AllBikesWithCheckOneTitle" xml:space="preserve">
     <value>All BIkes with check for existence by retrieving only one record</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Loading</value>
+  </data>
+  <data name="Waiting" xml:space="preserve">
+    <value>Waiting</value>
   </data>
 </root>

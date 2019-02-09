@@ -1,4 +1,5 @@
 ﻿@using Jamuro.AdventureWorks.Resources
+@using Jamuro.AdventureWorks.SimpleDemo.ViewModels
 
 <!DOCTYPE html>
 <html>
@@ -10,6 +11,11 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
+    @{ 
+        var waitingWindowViewModel = WaitingWindowViewModel.GetDefaultValues();
+    }
+    @Html.Partial("_Waiting", waitingWindowViewModel)
+
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -30,64 +36,64 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="@Url.Action("GetAllBikes", "Product")">
+                                <a class="waiting-menu-item" href="@Url.Action("GetAllBikes", "Product")">
                                     All Bikes - N+1 Problem
                                     <span class="text-danger"><strong>Bad</strong></span>
                                 </a>
                             </li>
                             <li>
-                                <a href="@Url.Action("GetAllBikesWithIncludes", "Product")">
+                                <a class="waiting-menu-item" href="@Url.Action("GetAllBikesWithIncludes", "Product")">
                                     All Bikes - Add Includes
                                     <span class="text-success">Good</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="@Url.Action("GetAllBikesWithIncludesNoTracking", "Product")">
+                                <a class="waiting-menu-item" href="@Url.Action("GetAllBikesWithIncludesNoTracking", "Product")">
                                     All Bikes - Add Includes + No Tracking
                                     <span class="text-success"><strong>Good</strong></span>
                                 </a>
                             </li>
                             <li role="separator" class="divider"></li>
                             <li>
-                            <a href="@Url.Action("GetAllBikesWithCheckAllCount", "Product")">
+                            <a class="waiting-menu-item" href="@Url.Action("GetAllBikesWithCheckAllCount", "Product")">
                                 All Bikes - Check for existence with Count over all products
                                 <span class="text-danger"><strong>Bad</strong></span>
                             </a>
                             </li>
                             <li>
-                                <a href="@Url.Action("GetAllBikesWithCheckAllAny", "Product")">
+                                <a class="waiting-menu-item" href="@Url.Action("GetAllBikesWithCheckAllAny", "Product")">
                                     All Bikes - Check for existence with Any over all products
                                     <span class="text-danger"><strong>Bad</strong></span>
                                 </a>
                             </li>
                             <li>
-                                <a href="@Url.Action("GetAllBikesWithCheckOne", "Product")">
+                                <a class="waiting-menu-item" href="@Url.Action("GetAllBikesWithCheckOne", "Product")">
                                     All Bikes - Check for existence with Any over filter
                                     <span class="text-success">Good</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="@Url.Action("GetAllBikesWithCheckExists", "Product")">
+                                <a class="waiting-menu-item" href="@Url.Action("GetAllBikesWithCheckExists", "Product")">
                                     All Bikes - Check for existence with Exists
                                     <span class="text-success"><strong>Good</strong></span>
                                 </a>
                             </li>
                             <li role="separator" class="divider"></li>
                             <li>
-                                <a href="@Url.Action("GetMostExpensiveBikes", "Product", new { maxNumber=10, topInjectedInSQL = false})">
+                                <a class="waiting-menu-item" href="@Url.Action("GetMostExpensiveBikes", "Product", new { maxNumber=10, topInjectedInSQL = false})">
                                     Top 10 Most Expensive Bikes
                                     <span class="text-danger"><strong>Bad</strong></span>
                                 </a>
                             </li>
                             <li>
-                                <a href="@Url.Action("GetMostExpensiveBikes", "Product", new { maxNumber=10, topInjectedInSQL = true})">
+                                <a class="waiting-menu-item" href="@Url.Action("GetMostExpensiveBikes", "Product", new { maxNumber=10, topInjectedInSQL = true})">
                                     Top 10 Most Expensive Bikes
                                     <span class="text-success"><strong>Good</strong></span>
                                 </a>
                             </li>
                             <li role="separator" class="divider"></li>
                             <li>
-                                <a href="@Url.Action("GetAllBikesWithAllImprovements", "Product")">
+                                <a class="waiting-menu-item" href="@Url.Action("GetAllBikesWithAllImprovements", "Product")">
                                     All Bikes - Add Includes + No Tracking + Restrict SQL Fields
                                     <span class="text-success"><strong>Best</strong></span>
                                 </a>
@@ -121,5 +127,19 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $("#@waitingWindowViewModel.Name").fadeOut(500);
+
+        $("a.waiting-menu-item").click(function(e) {
+            $("#@waitingWindowViewModel.Name").show();
+            return true;
+        })
+    });
+
+
+    </script>
+
 </body>
 </html>

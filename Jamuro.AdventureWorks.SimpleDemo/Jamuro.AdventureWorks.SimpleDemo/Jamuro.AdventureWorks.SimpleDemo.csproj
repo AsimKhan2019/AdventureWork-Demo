@@ -207,6 +207,7 @@
     <Compile Include="ViewModels\Help\EntityFrameworkViewModel.cs" />
     <Compile Include="ViewModels\Help\HelpViewModel.cs" />
     <Compile Include="ViewModels\Product\ProductViewModel.cs" />
+    <Compile Include="ViewModels\WaitingWindowModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -225,6 +226,7 @@
     <Content Include="Content\Images\Linq\Queryable-extension-methods.png" />
     <Content Include="Content\Images\ORM.Capture.1.PNG" />
     <Content Include="Content\Images\ORM.Capture.2.PNG" />
+    <Content Include="Content\Images\Preloader.gif" />
     <Content Include="Content\Images\Skeletor.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -275,6 +277,7 @@
     <Content Include="Views\Product\AllBikesWithCheckExists.cshtml" />
     <Content Include="Views\Product\MostExpensiveBikes.cshtml" />
     <Content Include="Views\Product\AllBikesWithAllImprovements.cshtml" />
+    <Content Include="Views\Shared\_Waiting.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
