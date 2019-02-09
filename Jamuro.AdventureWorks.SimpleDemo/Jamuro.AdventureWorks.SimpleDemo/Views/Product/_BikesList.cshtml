@@ -5,6 +5,9 @@
     int counter = 1;
 }
 
+<div class="text-center">
+    @Labels.Bikes: <span class=""><strong>@Model.Products.Count()</strong></span>
+</div>
 <div class="container">
     @foreach (var product in Model.Products)
     {
@@ -18,10 +21,10 @@
                 <div class="product-data">
                     <h3>@Html.DisplayTextFor(x => product.Name)</h3>
                     <p>
-                        Number: @Html.DisplayTextFor(x => product.ProductNumber)<br />
+                        @Labels.Number: @Html.DisplayTextFor(x => product.ProductNumber)<br />
                         @Html.DisplayTextFor(x => product.ProductCategory.CategoryName) - @Html.DisplayTextFor(x => product.ProductCategory.SubcategoryName)<br />
                         @Html.DisplayTextFor(x => product.Color)<br />
-                        Price: <span class="alert-success">@string.Format("{0:c}", product.ListPrice)</span><br />
+                        @Labels.Price: <span class="alert-success">@string.Format("{0:c}", product.ListPrice)</span><br />
                     </p>
                     <div class="product-image-container">
                         @if (product.ProductPhoto.Any())
@@ -33,7 +36,7 @@
                         }
                         else
                         {
-                    <p>Not photo available yet</p>
+                    <p>@Messages.NotPhotoAvailable</p>
                     }
                         <p class="text-center">@Html.ActionLink($"{product.ProductReview.Count()} comments", string.Empty) </p>
                     </div>
@@ -48,7 +51,4 @@
 
         counter++;
     }
-</div>
-<div>
-    Total Bikes: @Model.Products.Count()
 </div>

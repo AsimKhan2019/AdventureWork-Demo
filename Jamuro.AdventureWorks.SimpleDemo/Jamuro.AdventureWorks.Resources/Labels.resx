@@ -117,8 +117,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AffectedByN1Problem" xml:space="preserve">
+    <value>Affected by N+1 Problem</value>
+  </data>
+  <data name="AllBikes" xml:space="preserve">
+    <value>All Bikes</value>
+  </data>
+  <data name="AllProducts" xml:space="preserve">
+    <value>All Products</value>
+  </data>
+  <data name="and" xml:space="preserve">
+    <value>and</value>
+  </data>
   <data name="ApplicationName" xml:space="preserve">
     <value>Adventure Works Simple Demo</value>
+  </data>
+  <data name="AvoidN1ProblemWithIncludes" xml:space="preserve">
+    <value>Avoid N+1 Problem by using "Includes"</value>
+  </data>
+  <data name="BadPractiseForCheckingExistence" xml:space="preserve">
+    <value>Affected by bad practice to check pre-existence of rows</value>
+  </data>
+  <data name="Bikes" xml:space="preserve">
+    <value>Bikes</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Comments</value>
   </data>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
@@ -128,5 +155,38 @@
   </data>
   <data name="JamuroName" xml:space="preserve">
     <value>José A. Muro</value>
+  </data>
+  <data name="MostExpensiveBikes" xml:space="preserve">
+    <value>Most Expensive Bikes</value>
+  </data>
+  <data name="NotAffectedForCheckingExistence" xml:space="preserve">
+    <value>Not affected when checking pre-existence of rows</value>
+  </data>
+  <data name="NoTracking" xml:space="preserve">
+    <value>No Tracking</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>Number</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="SelectOnlySqlEmployedFields" xml:space="preserve">
+    <value>Select only SQL fields that are employed in business model</value>
+  </data>
+  <data name="SkipTracking" xml:space="preserve">
+    <value>Skip Tracking</value>
+  </data>
+  <data name="WithIncludes" xml:space="preserve">
+    <value>With Includes</value>
+  </data>
+  <data name="AllBikesWithCheckAllAnyTitle" xml:space="preserve">
+    <value>All Bikes with check for existence by using Any() over all rows</value>
+  </data>
+  <data name="AllBikesWithCheckAllCountTitle" xml:space="preserve">
+    <value>All Bikes with check for existence by using Count() over all rows</value>
+  </data>
+  <data name="AllBikesWithCheckOneTitle" xml:space="preserve">
+    <value>All BIkes with check for existence by retrieving only one record</value>
   </data>
 </root>

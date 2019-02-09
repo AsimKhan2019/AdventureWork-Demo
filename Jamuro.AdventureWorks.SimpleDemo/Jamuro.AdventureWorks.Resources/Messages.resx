@@ -126,4 +126,7 @@
   <data name="NotFound_Message" xml:space="preserve">
     <value>Page "{0}" is not found</value>
   </data>
+  <data name="NotPhotoAvailable" xml:space="preserve">
+    <value />
+  </data>
 </root>

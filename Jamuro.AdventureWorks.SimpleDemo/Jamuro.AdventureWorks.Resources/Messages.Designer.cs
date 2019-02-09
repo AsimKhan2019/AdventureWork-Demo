@@ -86,5 +86,14 @@ namespace Jamuro.AdventureWorks.Resources {
                 return ResourceManager.GetString("NotFound_Message", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string NotPhotoAvailable {
+            get {
+                return ResourceManager.GetString("NotPhotoAvailable", resourceCulture);
+            }
+        }
     }
 }

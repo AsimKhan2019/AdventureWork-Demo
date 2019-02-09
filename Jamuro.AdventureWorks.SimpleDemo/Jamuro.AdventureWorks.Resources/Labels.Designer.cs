@@ -61,11 +61,119 @@ namespace Jamuro.AdventureWorks.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Affected by N+1 Problem.
+        /// </summary>
+        public static string AffectedByN1Problem {
+            get {
+                return ResourceManager.GetString("AffectedByN1Problem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All Bikes.
+        /// </summary>
+        public static string AllBikes {
+            get {
+                return ResourceManager.GetString("AllBikes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All Bikes with check for existence by using Any() over all rows.
+        /// </summary>
+        public static string AllBikesWithCheckAllAnyTitle {
+            get {
+                return ResourceManager.GetString("AllBikesWithCheckAllAnyTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All Bikes with check for existence by using Count() over all rows.
+        /// </summary>
+        public static string AllBikesWithCheckAllCountTitle {
+            get {
+                return ResourceManager.GetString("AllBikesWithCheckAllCountTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All BIkes with check for existence by retrieving only one record.
+        /// </summary>
+        public static string AllBikesWithCheckOneTitle {
+            get {
+                return ResourceManager.GetString("AllBikesWithCheckOneTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All Products.
+        /// </summary>
+        public static string AllProducts {
+            get {
+                return ResourceManager.GetString("AllProducts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to and.
+        /// </summary>
+        public static string and {
+            get {
+                return ResourceManager.GetString("and", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Adventure Works Simple Demo.
         /// </summary>
         public static string ApplicationName {
             get {
                 return ResourceManager.GetString("ApplicationName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Avoid N+1 Problem by using &quot;Includes&quot;.
+        /// </summary>
+        public static string AvoidN1ProblemWithIncludes {
+            get {
+                return ResourceManager.GetString("AvoidN1ProblemWithIncludes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Affected by bad practice to check pre-existence of rows.
+        /// </summary>
+        public static string BadPractiseForCheckingExistence {
+            get {
+                return ResourceManager.GetString("BadPractiseForCheckingExistence", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bikes.
+        /// </summary>
+        public static string Bikes {
+            get {
+                return ResourceManager.GetString("Bikes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Color.
+        /// </summary>
+        public static string Color {
+            get {
+                return ResourceManager.GetString("Color", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Comments.
+        /// </summary>
+        public static string Comments {
+            get {
+                return ResourceManager.GetString("Comments", resourceCulture);
             }
         }
         
@@ -93,6 +201,78 @@ namespace Jamuro.AdventureWorks.Resources {
         public static string JamuroName {
             get {
                 return ResourceManager.GetString("JamuroName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Most Expensive Bikes.
+        /// </summary>
+        public static string MostExpensiveBikes {
+            get {
+                return ResourceManager.GetString("MostExpensiveBikes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not affected when checking pre-existence of rows.
+        /// </summary>
+        public static string NotAffectedForCheckingExistence {
+            get {
+                return ResourceManager.GetString("NotAffectedForCheckingExistence", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No Tracking.
+        /// </summary>
+        public static string NoTracking {
+            get {
+                return ResourceManager.GetString("NoTracking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number.
+        /// </summary>
+        public static string Number {
+            get {
+                return ResourceManager.GetString("Number", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price.
+        /// </summary>
+        public static string Price {
+            get {
+                return ResourceManager.GetString("Price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select only SQL fields that are employed in business model.
+        /// </summary>
+        public static string SelectOnlySqlEmployedFields {
+            get {
+                return ResourceManager.GetString("SelectOnlySqlEmployedFields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Skip Tracking.
+        /// </summary>
+        public static string SkipTracking {
+            get {
+                return ResourceManager.GetString("SkipTracking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to With Includes.
+        /// </summary>
+        public static string WithIncludes {
+            get {
+                return ResourceManager.GetString("WithIncludes", resourceCulture);
             }
         }
     }

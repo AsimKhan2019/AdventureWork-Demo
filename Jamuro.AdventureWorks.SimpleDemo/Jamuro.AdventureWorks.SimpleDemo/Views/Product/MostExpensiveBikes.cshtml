@@ -6,7 +6,7 @@
     ViewBag.Title = Model.Title();
 }
 
-<h1>Most Expensive Bikes</h1>
+<h1>@Labels.MostExpensiveBikes</h1>
 <h2>@(ViewBag.TopInjectedInSQL ? $"SQL returning only top {ViewBag.MaxNumber} bikes" : $"Affected by bad SQL returning all products and then, filtering by {ViewBag.MaxNumber} most expensive")</h2>
 
 @section ElapsedTime{
