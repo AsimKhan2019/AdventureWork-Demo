@@ -124,7 +124,7 @@ namespace Jamuro.AdventureWorks.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Adventure Works Demo.
+        ///   Looks up a localized string similar to ORM Demo.
         /// </summary>
         public static string ApplicationName {
             get {

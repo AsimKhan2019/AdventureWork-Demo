@@ -130,7 +130,7 @@
     <value>and</value>
   </data>
   <data name="ApplicationName" xml:space="preserve">
-    <value>Adventure Works Demo</value>
+    <value>ORM Demo</value>
   </data>
   <data name="AvoidN1ProblemWithIncludes" xml:space="preserve">
     <value>Avoid N+1 Problem by using "Includes"</value>

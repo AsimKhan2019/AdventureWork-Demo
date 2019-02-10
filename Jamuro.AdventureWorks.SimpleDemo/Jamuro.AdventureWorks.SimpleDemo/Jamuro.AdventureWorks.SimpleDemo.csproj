@@ -215,6 +215,7 @@
     <Content Include="Content\Images\Boom.500.jpg" />
     <Content Include="Content\Images\Deloitte-ES-IMG-ORM1.png" />
     <Content Include="Content\Images\Desert.404.jpg" />
+    <Content Include="Content\Images\Dotnetters.png" />
     <Content Include="Content\Images\EntityFramework\Dbcontext.2.png" />
     <Content Include="Content\Images\EntityFramework\DBcontext.1.png" />
     <Content Include="Content\Images\EntityFramework\EF-architecture.PNG" />
@@ -226,6 +227,7 @@
     <Content Include="Content\Images\Linq\Queryable-extension-methods.png" />
     <Content Include="Content\Images\ORM.Capture.1.PNG" />
     <Content Include="Content\Images\ORM.Capture.2.PNG" />
+    <Content Include="Content\Images\Preloader.1.gif" />
     <Content Include="Content\Images\Preloader.gif" />
     <Content Include="Content\Images\Skeletor.jpg" />
     <Content Include="favicon.ico" />

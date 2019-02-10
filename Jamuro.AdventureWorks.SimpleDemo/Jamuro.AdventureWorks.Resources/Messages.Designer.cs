@@ -88,7 +88,7 @@ namespace Jamuro.AdventureWorks.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Not photo available.
         /// </summary>
         public static string NotPhotoAvailable {
             get {

@@ -127,6 +127,6 @@
     <value>Page "{0}" is not found</value>
   </data>
   <data name="NotPhotoAvailable" xml:space="preserve">
-    <value />
+    <value>Not photo available</value>
   </data>
 </root>
