@@ -9,5 +9,10 @@ namespace Jamuro.AdventureWorks.SimpleDemo.ViewModels
     public class ProductViewModel : BaseViewModel
     {
         public IEnumerable<Models.Product> Products;
+
+        public override string Title()
+        {
+            return Labels.Bikes;
+        }
     }
 }

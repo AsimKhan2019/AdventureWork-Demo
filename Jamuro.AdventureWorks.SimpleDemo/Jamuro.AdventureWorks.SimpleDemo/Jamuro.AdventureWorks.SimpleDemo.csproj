@@ -234,6 +234,7 @@
     <Content Include="Content\Images\SQLQueryStress\ORM.Optimized.2.PNG" />
     <Content Include="Content\Images\SQLQueryStress\ORM.Top10MostExpensive.1.PNG" />
     <Content Include="Content\Images\SQLQueryStress\ORM.Top10MostExpensive.2.PNG" />
+    <Content Include="Content\Images\UnderConstruction.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -285,6 +286,10 @@
     <Content Include="Views\Product\AllBikesWithAllImprovements.cshtml" />
     <Content Include="Views\Shared\_Waiting.cshtml" />
     <Content Include="Views\Shared\_N1Problem.cshtml" />
+    <Content Include="Views\Help\SQLMonitorization.cshtml" />
+    <Content Include="Views\Help\SQLIndexes.cshtml" />
+    <Content Include="Views\Help\SQLResourceOptimization.cshtml" />
+    <Content Include="Views\Help\SQLQueryOptimization.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -21,5 +21,27 @@ namespace Jamuro.AdventureWorks.SimpleDemo.Controllers
             LinqViewModel linqViewModel = new LinqViewModel();
             return View(linqViewModel);
         }
+
+        public ActionResult SQLMonitorization()
+        {
+            return View();
+        }
+
+        public ActionResult SQLIndexes()
+        {
+            return View();
+        }
+
+        public ActionResult SQLResourceOptimization()
+        {
+            return View();
+        }
+
+        public ActionResult SQLQueryOptimization()
+        {
+            return View();
+        }
+
+        
     }
 }
