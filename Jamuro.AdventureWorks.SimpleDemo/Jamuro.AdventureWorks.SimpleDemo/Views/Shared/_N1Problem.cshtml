@@ -1,0 +1,18 @@
+﻿<hr/>
+<h3>What is Select N+1 Problem?</h3>
+<p>
+    <b>ORMs</b> can help you to address the impedance mismatch between relational databases and object oriented models and by that <b>make your life simpler</b>. 
+    But not knowing about some of their pitfalls can decrease your performance dramatically. 
+    One of those pitfalls is the select N+1 problem. 
+    This problem is being caused mainly because most of the <b>ORMs out there are enabling lazy loading behavior by default</b>. 
+    When we have a parent-children relation the problem can raise its ugly head. 
+    The problem is happening when we are executing a single query and then N following queries (N is the number of parent entities) in order to query for something. 
+    As you can expect <b>doing N+1 queries instead of a single one will flood your database with queries that we can and should avoid</b>. 
+    This is very unacceptable.
+</p>
+<p>
+    More Information:
+    <a href="http://blogs.microsoft.co.il/gilf/2010/08/18/select-n1-problem-how-to-decrease-your-orm-performance/" target="_blank">
+        Select N+1 Problem – How to Decrease Your ORM Performance
+    </a>
+</p>

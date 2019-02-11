@@ -72,14 +72,18 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="External\LINQPad\Get Bikes With Reviews and Photo.linq" />
-    <None Include="External\LINQPad\Get Top 10 Most Expensive Bikes With Reviews and Photo.linq" />
+    <None Include="External\LINQPad\Get Bikes With Reviews and Photo.1.linq" />
+    <None Include="External\LINQPad\Get Bikes With Reviews and Photo.2.linq" />
+    <None Include="External\LINQPad\Get Top 10 Most Expensive Bikes With Reviews and Photo.1.linq" />
+    <None Include="External\LINQPad\Get Top 10 Most Expensive Bikes With Reviews and Photo.2.linq" />
     <None Include="External\SQLExtendedEvents\Jamuro.AdventureWorks2016.SQLExtendedEvent.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="External\SQLProfiler\Jamuro.AdventureWorks2016.SQLProfilerTemplate.tdf" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="External\PPTs\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

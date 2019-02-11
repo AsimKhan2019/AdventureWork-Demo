@@ -107,8 +107,8 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Entity Framework", "EntityFramework", "Help")</li>
                             <li>@Html.ActionLink("LINQ", "LINQ", "Help")</li>
+                            <li>@Html.ActionLink("Entity Framework", "EntityFramework", "Help")</li>
                         </ul>
                     </li>
                 </ul>
@@ -136,6 +136,10 @@
             $("#@waitingWindowViewModel.Name").show();
             return true;
         })
+
+        $(".toogle-sqlquerystress-result").click(function () {
+            $(".sqlquerystress-result").toggle();
+        });
     });
 
 

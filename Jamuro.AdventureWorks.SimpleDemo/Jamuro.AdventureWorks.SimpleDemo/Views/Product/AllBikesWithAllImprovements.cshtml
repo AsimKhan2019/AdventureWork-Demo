@@ -10,6 +10,34 @@
 <h2>@Labels.AvoidN1ProblemWithIncludes</h2>
 <h3>@Labels.SkipTracking</h3>
 <h3>@Labels.SelectOnlySqlEmployedFields</h3>
+<hr/>
+<div class="text-center">
+    <button class="toogle-sqlquerystress-result btn btn-dark">Show/Hide SQL Query Stress Results</button>
+</div>
+<div class="row sqlquerystress-result" style="display: none">
+    <div class="col-md-6">
+        <p class="text-center">
+            <span class="text-success">Good</span>
+        </p>
+        <p>
+            Results from "Add Includes + No Tracking" executed with "SQL Query Stress" tool over 100 iterations: 
+        </p>
+        <div class="text-center">
+            <img src="~/Content/Images/SQLQueryStress/ORM.Optimized.1.PNG" />
+        </div>
+    </div>
+    <div class="col-md-6">
+        <p class="text-center">
+            <span class="text-success"><strong>Best</strong></span> (Current)
+        </p>
+        <p>
+            Results from "Add Includes + No Tracking + Only Required fields" executed with "SQL Query Stress" tool over 100 iterations:
+        </p>
+        <div class="text-center">
+            <img src="~/Content/Images/SQLQueryStress/ORM.Optimized.2.PNG" />
+        </div>
+    </div>
+</div>    
 
 @section ElapsedTime{   
     <hr/>

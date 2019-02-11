@@ -72,3 +72,7 @@ p.elapsed-time{
     min-height:100px;
     padding:10px;
 }
+
+.toogle-sqlquerystress-result{
+    margin:10px;
+}
