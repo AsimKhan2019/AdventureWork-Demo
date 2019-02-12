@@ -195,4 +195,7 @@
   <data name="Waiting" xml:space="preserve">
     <value>Waiting</value>
   </data>
+  <data name="OnlySpanishVersion" xml:space="preserve">
+    <value>Only Spanish Version</value>
+  </data>
 </root>

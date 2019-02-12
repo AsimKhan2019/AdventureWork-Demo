@@ -250,6 +250,15 @@ namespace Jamuro.AdventureWorks.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Only Spanish Version.
+        /// </summary>
+        public static string OnlySpanishVersion {
+            get {
+                return ResourceManager.GetString("OnlySpanishVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Price.
         /// </summary>
         public static string Price {
