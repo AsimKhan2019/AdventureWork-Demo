@@ -5,14 +5,77 @@
 <div class="row">
     <div class="col-md-12">
         <h2>SQL Server Profiler</h2>
-        <p class="text-center"><img src="~/Content/Images/UnderConstruction.png" /></p>
+        <div>
+            <button class="toogle-sqlprofiler-details btn btn-dark">Show/Hide Details</button>
+        </div>
+        <div class="toogle-sqlprofiler-content" style="display: none">
+            <h3>¿Qué es?</h3>
+            <p>
+                <ul>
+                    <li>Herramienta gráfica de supervisión y monitorización de actividad en instancias de motores de base de datos de SQL Server y Analysis Services</li>
+                </ul>
+            </p>
+            <h3>¿Para qué sirve?</h3>
+            <p>
+                <ul>
+                    <li>Supervisión y monitorización de consultas</li>
+                    <li>
+                        Detección de procesos y/o consultas lentas. Optimización de Componentes Externos e Internos.
+                    </li>
+                    <li>
+                        Consultas generadas a partir de Componentes Externos (ORMs, Entity Framework, LINQ, ADO.Net, nHibernate, etc.)
+                    </li>
+                    <li>
+                        <strong>Permite monitorizar y analizar las consultas SQL generadas por los ORMs</strong>. Estos componentes suelen mejorar la velocidad y facilidad de implementación pero una mala utilización sobre sistemas pesados y/o de elevada concurrencia compromete el rendimiento e incluso la actividad normal del sistema.
+                    </li>
+                    <li>
+                        <strong>Podemos optimizar el uso de los ORMs simplemente examinando el impacto que nuestro código genera en los motores de bases de datos</strong>. Responde a preguntas como: "En nuestra aplicación, en el caso que estoy depurando: ¿Es mejor una única conexión con una consulta "compleja" o múltiples conexiones con consultas "simples"?
+                    </li>
+                    <li>
+                        El impacto es evaluado mediante indicadores como "Tiempo de ejecución", "Número de Lecturas", "Número de Escrituras", "Uso de CPU", etc.
+                    </li>
+                    <li>
+                        Consultas generadas a partir de Componentes Internos (Procedimientos Almacenados SQL, Funciones SQL, etc.)
+                    </li>
+                    <li>Nos da la respuesta a las siguientes preguntas: ¿Qué procedimientos almacenados son lentos en mi sistema? ¿Qué consultas concretas de cada procedimiento almacenado están generando las penalizaciones de rendimiento?...</li>
+                </ul>
+            </p>
+            <hr />
+            <h3>Primeros pasos con SQL Server Profiler</h3>
+            <p class="text-center">
+                <img class="img-ppt" src="~/Content/Images/SQLProfiler/ORM.SQLProfiler.1.JPG" />
+            </p>
+            <hr />
+            <h3>¿Cómo funciona la monitorización?</h3>
+            <p class="text-center">
+                <img class="img-ppt" src="~/Content/Images/SQLProfiler/ORM.SQLProfiler.2.JPG" />
+            </p>
+        </div>
     </div>
 </div>
 <hr />
 <div class="row">   
     <div class="col-md-12">
         <h2>SQL Server Extended Events</h2>
-        <p class="text-center"><img src="~/Content/Images/UnderConstruction.png" /></p>
+        <div>
+            <button class="toogle-sqlextendedevents-details btn btn-dark">Show/Hide Details</button>
+        </div>
+        <div class="toogle-sqlextendedevents-content" style="display: none">
+            <h3>¿Qué es?</h3>
+            <p>
+                <ul>
+                    <li>Nueva herramienta gráfica de supervisión y monitorización de actividad que reemplaza a SQL Server Profiler mejorando sus prestaciones</li>
+                </ul>
+            </p>
+            <h3>Ventajas de SQL Server Extended Events vs SQL Server Profiler</h3>
+            <p>
+                <ul>
+                    <li>Requiere muchos menos recursos y funciona más rápido</li>
+                    <li>Se pueden monitorizar más eventos y con más información de detalle</li>
+                    <li>Más facilidad de configuración</li>
+                </ul>
+            </p>
+            </div>
+        </div>
     </div>
-</div>
 <hr />

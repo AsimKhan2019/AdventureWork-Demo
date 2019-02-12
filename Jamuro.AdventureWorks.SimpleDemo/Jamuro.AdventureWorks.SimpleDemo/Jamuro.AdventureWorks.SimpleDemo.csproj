@@ -230,6 +230,8 @@
     <Content Include="Content\Images\Preloader.1.gif" />
     <Content Include="Content\Images\Preloader.gif" />
     <Content Include="Content\Images\Skeletor.jpg" />
+    <Content Include="Content\Images\SQLProfiler\ORM.SQLProfiler.1.JPG" />
+    <Content Include="Content\Images\SQLProfiler\ORM.SQLProfiler.2.JPG" />
     <Content Include="Content\Images\SQLQueryStress\ORM.Optimized.1.PNG" />
     <Content Include="Content\Images\SQLQueryStress\ORM.Optimized.2.PNG" />
     <Content Include="Content\Images\SQLQueryStress\ORM.Top10MostExpensive.1.PNG" />
