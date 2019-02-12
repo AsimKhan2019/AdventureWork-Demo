@@ -107,10 +107,11 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("SQL Monitorization", "SQLMonitorization", "Help")</li>
-                            <li>@Html.ActionLink("SQL Indexes", "SQLIndexes", "Help")</li>
-                            <li>@Html.ActionLink("SQL Query Optimization", "SQLQueryOptimization", "Help")</li>
+                            <li>@Html.ActionLink("SQL Monitorization", "SQLMonitorization", "Help")</li>                          
                             <li>@Html.ActionLink("SQL Resource Optimization", "SQLResourceOptimization", "Help")</li>
+                            <li>@Html.ActionLink("SQL Query Optimization", "SQLQueryOptimization", "Help")</li>
+                            <li>@Html.ActionLink("SQL Indexes", "SQLIndexes", "Help")</li>
+                            
                             <li role="separator" class="divider"></li>
                             <li>@Html.ActionLink("LINQ", "LINQ", "Help")</li>
                             <li>@Html.ActionLink("Entity Framework", "EntityFramework", "Help")</li>
@@ -152,6 +153,10 @@
 
         $(".toogle-sqlextendedevents-details").click(function () {
             $(".toogle-sqlextendedevents-content").toggle();
+        })
+
+        $(".toogle-details").click(function () {
+            $(".toogle-details-content").toggle();
         })
     });
 
