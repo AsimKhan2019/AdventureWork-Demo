@@ -198,4 +198,22 @@
   <data name="OnlySpanishVersion" xml:space="preserve">
     <value>Only Spanish Version</value>
   </data>
+  <data name="ApplicationSubtitle" xml:space="preserve">
+    <value>Application demo by using SQL Server 2016 Adventure Works sample DB, MVC and EF.</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Background</value>
+  </data>
+  <data name="ExternalTools" xml:space="preserve">
+    <value>External Tools</value>
+  </data>
+  <data name="MoreResources" xml:space="preserve">
+    <value>More Resources</value>
+  </data>
+  <data name="Overview" xml:space="preserve">
+    <value>Overview</value>
+  </data>
+  <data name="Technologies" xml:space="preserve">
+    <value>Technologies</value>
+  </data>
 </root>

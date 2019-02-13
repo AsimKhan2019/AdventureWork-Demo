@@ -133,11 +133,29 @@ namespace Jamuro.AdventureWorks.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Application demo by using SQL Server 2016 Adventure Works sample DB, MVC and EF..
+        /// </summary>
+        public static string ApplicationSubtitle {
+            get {
+                return ResourceManager.GetString("ApplicationSubtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Avoid N+1 Problem by using &quot;Includes&quot;.
         /// </summary>
         public static string AvoidN1ProblemWithIncludes {
             get {
                 return ResourceManager.GetString("AvoidN1ProblemWithIncludes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Background.
+        /// </summary>
+        public static string Background {
+            get {
+                return ResourceManager.GetString("Background", resourceCulture);
             }
         }
         
@@ -178,6 +196,15 @@ namespace Jamuro.AdventureWorks.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to External Tools.
+        /// </summary>
+        public static string ExternalTools {
+            get {
+                return ResourceManager.GetString("ExternalTools", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
         public static string Home {
@@ -210,6 +237,15 @@ namespace Jamuro.AdventureWorks.Resources {
         public static string Loading {
             get {
                 return ResourceManager.GetString("Loading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to More Resources.
+        /// </summary>
+        public static string MoreResources {
+            get {
+                return ResourceManager.GetString("MoreResources", resourceCulture);
             }
         }
         
@@ -259,6 +295,15 @@ namespace Jamuro.AdventureWorks.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Overview.
+        /// </summary>
+        public static string Overview {
+            get {
+                return ResourceManager.GetString("Overview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Price.
         /// </summary>
         public static string Price {
@@ -282,6 +327,15 @@ namespace Jamuro.AdventureWorks.Resources {
         public static string SkipTracking {
             get {
                 return ResourceManager.GetString("SkipTracking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Technologies.
+        /// </summary>
+        public static string Technologies {
+            get {
+                return ResourceManager.GetString("Technologies", resourceCulture);
             }
         }
         

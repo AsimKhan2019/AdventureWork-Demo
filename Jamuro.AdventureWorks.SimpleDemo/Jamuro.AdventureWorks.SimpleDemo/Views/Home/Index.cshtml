@@ -4,11 +4,11 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
+<div class="jumbotron jamuro-jumbotron">
     <div class="row">       
         <div class="col-md-10">
             <h1>@Labels.ApplicationName</h1>
-            <p class="lead">Application demo by using SQL Server 2016 Adventure Works sample DB, MVC and EF.</p>
+            <p class="lead">@Labels.ApplicationSubtitle</p>
         </div>
         <div class="col-md-2 text-center">
             <img src="~/Content/Images/Dotnetters.png" style="margin:30px 0px;width:145px;height:51px"/>
@@ -17,12 +17,33 @@
 </div>
 <div class="row">
     <div class="col-md-4">
-        <h2>Main Goal</h2>
+        <h2>@Labels.Overview</h2>
         <p>This demo intends to show different ways of improving performance by optimizing LINQ queries yet displaying ways to monitor and debug activity</p> 
-        <img src="~/Content/Images/Deloitte-ES-IMG-ORM1.png" />       
+        <ul>
+            <li>
+                <a href="https://www2.deloitte.com/es/es/pages/technology/articles/que-es-orm.html" target="_blank">What is an ORM?</a>
+            </li>
+            <li>
+                <a href="https://www2.deloitte.com/es/es/pages/technology/articles/cuando-usar-orm.html" target="_blank">When to use an ORM?</a>
+            </li>
+            <li><a href="https://www2.deloitte.com/es/es/pages/technology/articles/como-optimizar-rendimiento-orm.html" target="_blank">How to optimize performance in your ORM?</a></li>
+        </ul>
+        <hr/>
+        <p><strong>An ORM is a programming model that allows us to map relational database structures on a logical framework of entities</strong> in order to simplify and accelerate the development work.</p>
+        <p>The structures of the relational database are linked to the logical entities or virtual database defined in the ORM, in such a way that  <strong>CRUD actions to execute on the physical database are performed indirectly through the ORM</strong>.</p>
+        <p class="text-center"><img class="img-thumbnail" src="~/Content/Images/ORM.Capture.1.PNG" /></p>    
+        <p>ORMs prevent us from coding manual SQL to perform queries and persist data in the database. <strong>Generating efficient SQL as from business/conceptual entities is one of the most challenging goals for an ORM (<i>Impedance mismatch</i>)</strong>.</p>
+        <p>The decision of using a certain ORM over a relational database should consider the following main points: 
+        <ul>
+            <li>Volume and complexity of entity models</li>
+            <li>Performance</li>
+            <li>Maturity level when dealing with SQL</li>
+        </ul>
+        </p>    
+              
     </div>
     <div class="col-md-4">
-        <h2>Technologies</h2>
+        <h2>@Labels.Technologies</h2>
         <p>
             This demo makes use of the following components:
             <ul>
@@ -32,8 +53,9 @@
                 <li><a href="https://blogs.msdn.microsoft.com/webdev/2014/07/29/profile-and-time-your-asp-net-mvc-app-all-the-way-to-azure/" target="_blank">StopWatch NuGet package</a><br />(Simple Performance Testing)</li>
             </ul>
         </p>
+        <p class="text-center"><img class="img-thumbnail" src="~/Content/Images/ORM.Capture.2.PNG" /></p>    
         <hr /> 
-        <h2>External Tools</h2>
+        <h2>@Labels.ExternalTools</h2>
         <p>
             I strongly recommend the use of the following components in order to monitor activity, apply best practices for coding and boost performance:
             <ul>
@@ -45,39 +67,28 @@
                 </li>
                 <li><a href="https://www.sonarlint.org/visualstudio/" target="_blank">SonarLint</a><br />(IDE extension for Visual Studio)</li>
                 <li>
-                    <a href="https://www.linqpad.net/" target="_blank">LINQPad</a><br/>(Lightweight testing tool for .Net)
+                    <a href="https://www.linqpad.net/" target="_blank">LINQPad</a><br />(Lightweight testing tool for .Net)
                 </li>
                 <li>
                     <a href="https://github.com/ErikEJ/SqlQueryStress" target="_blank">SQL Query Stress</a><br />(SQL query stress simulator)
                 </li>
             </ul>
-        </p>
-        
+        </p>     
     </div>
     <div class="col-md-4">
-        <h2>More Resources</h2>
-        <ul>
-            <li>
-                <a href="https://www2.deloitte.com/es/es/pages/technology/articles/que-es-orm.html" target="_blank">¿Qué es un ORM? </a>
-            </li>
-            <li>
-                <a href="https://www2.deloitte.com/es/es/pages/technology/articles/cuando-usar-orm.html" target="_blank">¿Cuando usar un ORM?</a>
-            </li>
-            <li><a href="https://www2.deloitte.com/es/es/pages/technology/articles/como-optimizar-rendimiento-orm.html" target="_blank">¿Cómo optimizar el rendimiento de tu ORM?</a></li>
-        </ul>
-        <p class="text-right"><img class="img-thumbnail" src="~/Content/Images/ORM.Capture.1.PNG" /></p>
-
-        <hr />
+        <h2>@Labels.Background</h2>  
+        <p class="text-center"><img src="~/Content/Images/Deloitte-ES-IMG-ORM1.png" /></p> 
+        <hr /> 
+        <h2>@Labels.MoreResources</h2>       
         <ul>
             <li><a href="http://www.entityframeworktutorial.net" target="_blank">Entity Framework Tutorial</a></li>
             <li><a href="https://www.tutorialsteacher.com/linq/linq-tutorials" target="_blank">LINQ Tutorial</a></li>
             <li>
                 <a href="https://visualstudiomagazine.com/articles/2018/03/19/dapper-orm.aspx?m=1" target="_blank">
-                    High Performance Object-Oriented Data Access with Dapper
+                    High Performance Data Access with Dapper
                 </a>
             </li>
-            <li><a hrfe="https://exceptionnotfound.net/dapper-vs-entity-framework-vs-ado-net-performance-benchmarking/">Dapper vs Entity Framework vs ADO.NET Performance Benchmarking</a></li>
+            <li><a href="https://exceptionnotfound.net/dapper-vs-entity-framework-vs-ado-net-performance-benchmarking/">Dapper vs EF vs ADO.NET Performance Benchmarking</a></li>
         </ul>
-        <p class="text-right"><img class="img-thumbnail" src="~/Content/Images/ORM.Capture.2.PNG" /></p>
 </div>
 </div>

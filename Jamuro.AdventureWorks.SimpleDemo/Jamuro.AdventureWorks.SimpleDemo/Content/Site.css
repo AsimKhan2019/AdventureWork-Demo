@@ -80,3 +80,13 @@ p.elapsed-time{
 .img-ppt{
     margin:20px 0px;
 }
+
+@media screen and (min-width: 768px) {
+  .jamuro-jumbotron {
+    padding-top: 20px!important;
+    padding-bottom: 20px!important;
+  }
+  .jamuro-jumbotron h1 {
+    font-size: 60px!important;
+  }
+}
