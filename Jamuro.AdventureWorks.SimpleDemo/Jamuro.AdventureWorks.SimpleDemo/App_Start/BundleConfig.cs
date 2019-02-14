@@ -23,6 +23,9 @@ namespace Jamuro.AdventureWorks.SimpleDemo
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/shared").Include(
+                       "~/Scripts/jamuro.adventureworks.simpledemo.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));

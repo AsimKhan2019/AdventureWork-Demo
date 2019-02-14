@@ -9,7 +9,7 @@ using Jamuro.AdventureWorks.Services.Workers.Interfaces;
 
 namespace Jamuro.AdventureWorks.SimpleDemo.Controllers
 {
-    public class ProductController : Controller
+    public class ProductController : BaseController
     {
         public readonly IProductWorker m_productWorker;
 

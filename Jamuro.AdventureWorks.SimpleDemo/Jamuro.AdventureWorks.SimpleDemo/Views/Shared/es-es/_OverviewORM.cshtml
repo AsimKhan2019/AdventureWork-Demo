@@ -1,0 +1,23 @@
+﻿<p>Esta demo muestra diferentes formas de mejorar el rendimiento de nuestras aplicacioens mediante la optimización de las consultas LINQ y SQL cuando se interactúa con un ORM (EF)</p>
+<ul>
+    <li>
+        <a href="https://www2.deloitte.com/es/es/pages/technology/articles/que-es-orm.html" target="_blank">¿Qué es un ORM?</a>
+    </li>
+    <li>
+        <a href="https://www2.deloitte.com/es/es/pages/technology/articles/cuando-usar-orm.html" target="_blank">¿Cuando usar un ORM?</a>
+    </li>
+    <li><a href="https://www2.deloitte.com/es/es/pages/technology/articles/como-optimizar-rendimiento-orm.html" target="_blank">¿Cómo optimizar el rendimiento de tu ORM?</a></li>
+</ul>
+<hr />
+<p><strong>Un ORM es un modelo de programación que permite mapear las estructuras de una base de datos relacional</strong> (SQL Server, Oracle, MySQL, etc.), en adelante RDBMS, <strong>sobre una estructura lógica de entidades</strong> con el objeto de simplificar y acelerar el desarrollo de nuestras aplicaciones</p>
+<p class="text-center"><img class="img-thumbnail" src="@Url.GetImage("ORM.Capture.1.PNG")" /></p>
+<p>Las estructuras de la base de datos relacional quedan vinculadas con las entidades lógicas definidas en el ORM, de tal modo que <strong>las acciones CRUD a ejecutar sobre la base de datos física se realizan de forma indirecta por medio del ORM</strong>.</p>
+<p>Los ORMs nos "liberan" de la generación manual de código SQL necesario para realizar las consultas y gestionar la persistencia de datos. Esta generación automática de SQL es uno de los mayores desafíos de un ORM ("impedance mismatch")</p>
+<p>
+    La decisión de usar un ORM concreto sobre una base de datos relacional debería apoyarse en los siguientes puntos:
+    <ul>
+        <li>Volumen y complejidad del modelo de entidades</li>
+        <li>Rendimiento</li>
+        <li>Nivel de madurez del equipo en entornos SQL</li>
+    </ul>
+</p>    

@@ -8,7 +8,7 @@ using Jamuro.AdventureWorks.Services.Workers;
 
 namespace Jamuro.AdventureWorks.SimpleDemo.Controllers
 {
-    public class HelpController : Controller
+    public class HelpController : BaseController
     {
         public ActionResult EntityFramework()
         {

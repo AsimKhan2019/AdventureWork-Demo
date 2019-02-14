@@ -1,5 +1,7 @@
 ﻿using System.Configuration;
 using System.Runtime.Caching;
+using System.Threading;
+using System.Web.Configuration;
 
 namespace Jamuro.AdventureWorks.SimpleDemo.Helpers
 {
@@ -32,5 +34,23 @@ namespace Jamuro.AdventureWorks.SimpleDemo.Helpers
             return string.IsNullOrWhiteSpace(appSettingValue) ? string.Empty : appSettingValue;
         }
 
+        public static string GetDefaultUICulture()
+        {
+            string defaultUICulture = string.Empty;
+            string key = $"DefaultUICulture";
+            object result = MemoryCache.Default.Get(key, null);
+            if (result == null)
+            {
+                Configuration config = WebConfigurationManager.OpenWebConfiguration("/");
+                GlobalizationSection section = (GlobalizationSection)config.GetSection("system.web/globalization");
+                defaultUICulture = section.UICulture;
+                MemoryCache.Default.Set(key, defaultUICulture, new CacheItemPolicy());
+            }
+            else
+            {
+                defaultUICulture = MemoryCache.Default.Get(key).ToString();
+            }
+            return defaultUICulture;
+        }
     }
 }

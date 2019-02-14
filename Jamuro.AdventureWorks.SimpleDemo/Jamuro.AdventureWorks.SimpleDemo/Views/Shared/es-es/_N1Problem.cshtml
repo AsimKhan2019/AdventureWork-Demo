@@ -1,0 +1,18 @@
+﻿
+<hr/>
+<h3>¿Qué es eso del problema N+1?</h3>
+<p>
+    Los <b> ORMs </b> aceleran y facilitan el trabajo de desarrollo de aplicaciones que incluyen bases de datos relacionales y modelos orientados a objetos.
+    Pero no saber acerca de algunos de sus "problemas" o sobre cómo funciona por debajo la "magia" que consulta y persiste datos, puede hacer que el rendimiento de las aplicaciones disminuya drásticamente..
+    Una de esas "trampas ocultas" es el problema del "Select N + 1".
+    Este problema está originado principalmente porque la mayoría de los <b> ORM habilitan el comportamiento de carga diferida (lazy loading) de forma predeterminada </b>.
+    Cuando tenemos una relación entre entidades padres e hijas, el problema puede desencadenarse.
+    Más en concreto ocurre cuando estamos ejecutando una sola consulta para obtener las entidades "padre" y luego N consultas para obtener las entidades "hijas" de cada "padre"" (N es el número de entidades "padre").
+    Como se puede esperar, <b> hacer N + 1 consultas (con N + 1 conexiones) en lugar de simplificarlas con una única empeorará los tiempos de respuesta y sobrecargará la base de datos de una manera inaceptable.</b>.
+</p>
+<p>
+    Más Información:
+    [<a href="http://blogs.microsoft.co.il/gilf/2010/08/18/select-n1-problem-how-to-decrease-your-orm-performance/" target="_blank">
+        Problema N+1 – ¿Qué hacer para que el rendimiento de tu ORM no sea un problema?
+    </a>]
+</p>

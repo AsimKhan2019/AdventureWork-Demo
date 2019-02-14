@@ -9,7 +9,7 @@ using Jamuro.AdventureWorks.SimpleDemo.Helpers;
 namespace Jamuro.AdventureWorks.SimpleDemo.Controllers
 {
     [AllowAnonymous]
-    public class ErrorController : Controller
+    public class ErrorController : BaseController
     {
         public ActionResult Error()
         {
