@@ -30,7 +30,7 @@ public class UseStopwatchAttribute : ActionFilterAttribute
       double et = stopWatch.Elapsed.Seconds +
          (stopWatch.Elapsed.Milliseconds / 1000.0);
 
-      filterContext.Controller.ViewBag.elapsedTime = "Elapsed time: " +
+      filterContext.Controller.ViewBag.elapsedTime = $"{Jamuro.AdventureWorks.Resources.Labels.ElapsedTime}: " +
            et.ToString();
    }
 

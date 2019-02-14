@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Jamuro.AdventureWorks.Resources;
+using Jamuro.AdventureWorks.SimpleDemo.Helpers;
 
 namespace Jamuro.AdventureWorks.SimpleDemo.ViewModels
 {

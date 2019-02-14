@@ -216,4 +216,61 @@
   <data name="Technologies" xml:space="preserve">
     <value>Technologies</value>
   </data>
+  <data name="ElapsedTime" xml:space="preserve">
+    <value>Tiempo de Ejecucion</value>
+  </data>
+  <data name="AddIncludes" xml:space="preserve">
+    <value>With Includes</value>
+  </data>
+  <data name="AllBikesWithCheckAnyTitle" xml:space="preserve">
+    <value>All Bikes with check for existence by using Any() with filter</value>
+  </data>
+  <data name="AllBikesWithCheckWIthExistsTitle" xml:space="preserve">
+    <value>All Bikes with check for existence by using Exists()</value>
+  </data>
+  <data name="Bad" xml:space="preserve">
+    <value>Bad</value>
+  </data>
+  <data name="Best" xml:space="preserve">
+    <value>Best</value>
+  </data>
+  <data name="Good" xml:space="preserve">
+    <value>Bien</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="N1Problem" xml:space="preserve">
+    <value>N+1 Problem</value>
+  </data>
+  <data name="RestrictSQLFields" xml:space="preserve">
+    <value>Restrict SQL Fields</value>
+  </data>
+  <data name="SQLIndexes" xml:space="preserve">
+    <value>SQL Indexes</value>
+  </data>
+  <data name="SQLMonitorization" xml:space="preserve">
+    <value>SQL Monitorization</value>
+  </data>
+  <data name="SQLQueryOptimization" xml:space="preserve">
+    <value>SQL Query Optimization</value>
+  </data>
+  <data name="SQLResourceOptimization" xml:space="preserve">
+    <value>SQL Resource Optimization</value>
+  </data>
+  <data name="Top10MostExpensiveBikes" xml:space="preserve">
+    <value>Top 10 Most Expensive Bikes</value>
+  </data>
+  <data name="ShowHideDetails" xml:space="preserve">
+    <value>Show/Hide Details</value>
+  </data>
+  <data name="SQLReturningOnlyTopBikes" xml:space="preserve">
+    <value>SQL returning only top {0} bikes</value>
+  </data>
+  <data name="SQLTopMostExpensiveBikesBadMsg" xml:space="preserve">
+    <value>Affected by bad SQL returning all products and then, filtering by {0} most expensive</value>
+  </data>
+  <data name="For" xml:space="preserve">
+    <value>For</value>
+  </data>
 </root>

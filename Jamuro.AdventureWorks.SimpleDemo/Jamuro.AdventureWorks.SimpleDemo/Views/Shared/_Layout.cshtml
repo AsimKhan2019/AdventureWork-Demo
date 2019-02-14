@@ -1,5 +1,6 @@
 ﻿@using Jamuro.AdventureWorks.Resources
 @using Jamuro.AdventureWorks.SimpleDemo.ViewModels
+@using Jamuro.AdventureWorks.SimpleDemo.Helpers
 
 <!DOCTYPE html>
 <html>
@@ -9,6 +10,7 @@
     <title>@Labels.ApplicationName @(ViewBag.Title != null ? "- " + ViewBag.Title : "") </title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/shared")
 </head>
 <body>
     @{ 
@@ -24,78 +26,78 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink(Labels.ApplicationName + " for dotNetters", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("dotNetters " + Labels.ApplicationName, "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink(Labels.Home, "Index", "Home")</li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            Bikes
+                            @Labels.Bikes
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
                             <li>
                                 <a class="waiting-menu-item" href="@Url.Action("GetAllBikes", "Product")">
-                                    All Bikes - N+1 Problem
-                                    <span class="text-danger"><strong>Bad</strong></span>
+                                    @Labels.AllBikes - @Labels.N1Problem
+                                    <span class="text-danger"><strong>@Labels.Bad</strong></span>
                                 </a>
                             </li>
                             <li>
                                 <a class="waiting-menu-item" href="@Url.Action("GetAllBikesWithIncludes", "Product")">
-                                    All Bikes - Add Includes
-                                    <span class="text-success">Good</span>
+                                    @Labels.AllBikes - @Labels.AddIncludes
+                                    <span class="text-success">@Labels.Good</span>
                                 </a>
                             </li>
                             <li>
                                 <a class="waiting-menu-item" href="@Url.Action("GetAllBikesWithIncludesNoTracking", "Product")">
-                                    All Bikes - Add Includes + No Tracking
-                                    <span class="text-success"><strong>Good</strong></span>
+                                    @Labels.AllBikes - @Labels.AddIncludes + @Labels.NoTracking
+                                    <span class="text-success"><strong>@Labels.Good</strong></span>
                                 </a>
                             </li>
                             <li role="separator" class="divider"></li>
                             <li>
                             <a class="waiting-menu-item" href="@Url.Action("GetAllBikesWithCheckAllCount", "Product")">
-                                All Bikes - Check for existence with Count over all products
-                                <span class="text-danger"><strong>Bad</strong></span>
+                                @Labels.AllBikesWithCheckAllCountTitle
+                                <span class="text-danger"><strong>@Labels.Bad</strong></span>
                             </a>
                             </li>
                             <li>
                                 <a class="waiting-menu-item" href="@Url.Action("GetAllBikesWithCheckAllAny", "Product")">
-                                    All Bikes - Check for existence with Any over all products
-                                    <span class="text-danger"><strong>Bad</strong></span>
+                                    @Labels.AllBikesWithCheckAllAnyTitle
+                                    <span class="text-danger"><strong>@Labels.Bad</strong></span>
                                 </a>
                             </li>
                             <li>
                                 <a class="waiting-menu-item" href="@Url.Action("GetAllBikesWithCheckOne", "Product")">
-                                    All Bikes - Check for existence with Any over filter
-                                    <span class="text-success">Good</span>
+                                    @Labels.AllBikesWithCheckAnyTitle
+                                    <span class="text-success">@Labels.Good</span>
                                 </a>
                             </li>
                             <li>
                                 <a class="waiting-menu-item" href="@Url.Action("GetAllBikesWithCheckExists", "Product")">
-                                    All Bikes - Check for existence with Exists
-                                    <span class="text-success"><strong>Good</strong></span>
+                                    @Labels.AllBikesWithCheckWIthExistsTitle
+                                    <span class="text-success"><strong>@Labels.Good</strong></span>
                                 </a>
                             </li>
                             <li role="separator" class="divider"></li>
                             <li>
-                                <a class="waiting-menu-item" href="@Url.Action("GetMostExpensiveBikes", "Product", new { maxNumber=10, topInjectedInSQL = false})">
-                                    Top 10 Most Expensive Bikes
-                                    <span class="text-danger"><strong>Bad</strong></span>
+                                <a class="waiting-menu-item" href="@Url.Action("GetMostExpensiveBikes", "Product", new { maxNumber = 10, topInjectedInSQL = false })">
+                                    @Labels.Top10MostExpensiveBikes
+                                    <span class="text-danger"><strong>@Labels.Bad</strong></span>
                                 </a>
                             </li>
                             <li>
-                                <a class="waiting-menu-item" href="@Url.Action("GetMostExpensiveBikes", "Product", new { maxNumber=10, topInjectedInSQL = true})">
-                                    Top 10 Most Expensive Bikes
-                                    <span class="text-success"><strong>Good</strong></span>
+                                <a class="waiting-menu-item" href="@Url.Action("GetMostExpensiveBikes", "Product", new { maxNumber = 10, topInjectedInSQL = true })">
+                                    @Labels.Top10MostExpensiveBikes
+                                    <span class="text-success"><strong>@Labels.Good</strong></span>
                                 </a>
                             </li>
                             <li role="separator" class="divider"></li>
                             <li>
                                 <a class="waiting-menu-item" href="@Url.Action("GetAllBikesWithAllImprovements", "Product")">
-                                    All Bikes - Add Includes + No Tracking + Restrict SQL Fields
-                                    <span class="text-success"><strong>Best</strong></span>
+                                    @Labels.AllBikes - @Labels.AddIncludes + @Labels.NoTracking + @Labels.RestrictSQLFields
+                                    <span class="text-success"><strong>@Labels.Best</strong></span>
                                 </a>
                             </li>
                             
@@ -103,14 +105,14 @@
                     </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            Help
+                            @Labels.Help
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("SQL Monitorization", "SQLMonitorization", "Help")</li>                          
-                            <li>@Html.ActionLink("SQL Resource Optimization", "SQLResourceOptimization", "Help")</li>
-                            <li>@Html.ActionLink("SQL Query Optimization", "SQLQueryOptimization", "Help")</li>
-                            <li>@Html.ActionLink("SQL Indexes", "SQLIndexes", "Help")</li>
+                            <li>@Html.ActionLink(Labels.SQLMonitorization, "SQLMonitorization", "Help")</li>                          
+                            <li>@Html.ActionLink(Labels.SQLResourceOptimization, "SQLResourceOptimization", "Help")</li>
+                            <li>@Html.ActionLink(Labels.SQLQueryOptimization, "SQLQueryOptimization", "Help")</li>
+                            <li>@Html.ActionLink(Labels.SQLIndexes, "SQLIndexes", "Help")</li>
                             
                             <li role="separator" class="divider"></li>
                             <li>@Html.ActionLink("LINQ", "LINQ", "Help")</li>
@@ -128,6 +130,14 @@
         <footer>           
             <p>&copy; @DateTime.Now.Year - @Labels.ApplicationName | <a href="@Labels.JamuroBlog" target="_blank">José A. Muro</a> | <a href="mailto:jmuro@deloitte.es">jmuro@deloitte.es</a> | <a href="mailto:jmuro77@hotmail.com">jmuro77@hotmail.com</a></p>
         </footer>
+        <ul class="langs" style="list-style:none;">
+            <li style="display:inline;">
+                <a href="" class="set-lang" data-lang="es-es"><img src="@Url.GetImage("Spain.png", false)" /></a>
+            </li>
+            <li style="display:inline;">
+                <a href="" class="set-lang" data-lang="en-US"><img src="@Url.GetImage("United-States-of-America.png", false)" /></a>
+            </li>
+        </ul>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
@@ -157,6 +167,15 @@
 
         $(".toogle-details").click(function () {
             $(".toogle-details-content").toggle();
+        })
+
+        var lang = JamuroAdventuresWorksSimpleDemo.Cookies.getCookie("@MemoryCacheManager.GetAppSettings("jamuro:MultiLanguageCookieName")");
+        $(".set-lang[data-lang='" + lang + "'] img").addClass("active-lang");
+
+        $(".set-lang").on("click", function (event) {
+            var lang = $(this).attr("data-lang");
+            JamuroAdventuresWorksSimpleDemo.Cookies.setCookie("@MemoryCacheManager.GetAppSettings("jamuro:MultiLanguageCookieName")", lang, 30);
+            location.reload(true);
         })
     });
 

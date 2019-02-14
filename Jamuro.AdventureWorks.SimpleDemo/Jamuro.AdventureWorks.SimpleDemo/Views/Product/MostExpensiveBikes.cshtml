@@ -7,35 +7,35 @@
 }
 
 <h1>@Labels.MostExpensiveBikes</h1>
-<h2>@(ViewBag.TopInjectedInSQL ? $"SQL returning only top {ViewBag.MaxNumber} bikes" : $"Affected by bad SQL returning all products and then, filtering by {ViewBag.MaxNumber} most expensive")</h2>
+<h2>@(ViewBag.TopInjectedInSQL ? $"{string.Format(Labels.SQLReturningOnlyTopBikes, ViewBag.MaxNumber)}" : $"{string.Format(Labels.SQLTopMostExpensiveBikesBadMsg, ViewBag.MaxNumber)}")</h2>
 
 @if (ViewBag.TopInjectedInSQL)
 {
     <hr />
     <div class="text-center">        
-        <button class="toogle-sqlquerystress-result btn btn-dark">Show/Hide SQL Query Stress Results</button>
+        <button class="toogle-sqlquerystress-result btn btn-dark">@Labels.ShowHideDetails (SQL Query Stress)</button>
     </div>
     <div class="row sqlquerystress-result" style="display: none">
         <div class="col-md-6">
             <p class="text-center">
-                <span class="text-danger"><strong>Bad</strong></span>
+                <span class="text-danger"><strong>@Labels.Bad</strong></span>
             </p>
             <p>
                 Results from LINQ query executed with "SQL Query Stress" tool over 100 iterations (filter by 10 most expensive bikes is not performed inside database):
             </p>
             <div class="text-center">
-                <img src="~/Content/Images/SQLQueryStress/ORM.Top10MostExpensive.1.PNG" />
+                <img src="@Url.GetImage("SQLQueryStress/ORM.Top10MostExpensive.1.PNG")"/>
             </div>
         </div>
         <div class="col-md-6">
             <p class="text-center">
-                <span class="text-success"><strong>Good</strong></span> (Current)
+                <span class="text-success"><strong>@Labels.Good</strong></span> (Current)
             </p>
             <p>
                 Results from LINQ query with "Top 10 injected in SQL" executed with "SQL Query Stress" tool over 100 iterations:
             </p>
             <div class="text-center">
-                <img src="~/Content/Images/SQLQueryStress/ORM.Top10MostExpensive.2.PNG" />
+                <img src="@Url.GetImage("SQLQueryStress/ORM.Top10MostExpensive.2.PNG")"/>
             </div>
         </div>
     </div>    

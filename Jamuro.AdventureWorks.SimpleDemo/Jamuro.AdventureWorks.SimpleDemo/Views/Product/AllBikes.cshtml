@@ -6,10 +6,10 @@
     ViewBag.Title = Model.Title();
 }
 
-<h1>@Labels.AllProducts</h1>
+<h1>@Labels.AllBikes</h1>
 <h2>@Labels.AffectedByN1Problem</h2>
 
-@Html.Partial("_N1Problem")
+@Html.Partial(Html.GetPartialViewName("_N1Problem"))
 
 @section ElapsedTime{
     <hr/>

@@ -14,9 +14,16 @@ namespace Jamuro.AdventureWorks.SimpleDemo
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "LocalizedDefault",
+                url: "{lang}/{controller}/{action}",
+                defaults: new { controller = "Home", action = "Index"},
+                constraints: new { lang = "en-us|es-es" }
+            );
+
+            routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                url: "{controller}/{action}",
+                defaults: new { controller = "Home", action = "Index", lang = "en-us" }
             );
         }
     }

@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AffectedByN1Problem" xml:space="preserve">
+    <value>Afectada por problema de rendimiento N+1</value>
+  </data>
+  <data name="AllBikes" xml:space="preserve">
+    <value>Todas las Bicicletas</value>
+  </data>
+  <data name="AllProducts" xml:space="preserve">
+    <value>Todos los Productos</value>
+  </data>
+  <data name="and" xml:space="preserve">
+    <value>y</value>
+  </data>
+  <data name="ApplicationName" xml:space="preserve">
+    <value>ORM Demo</value>
+  </data>
+  <data name="AvoidN1ProblemWithIncludes" xml:space="preserve">
+    <value>Evita típico problema N+1 por medio de "Includes"</value>
+  </data>
+  <data name="BadPractiseForCheckingExistence" xml:space="preserve">
+    <value>Afectado por uso ineficiente de chequeo de existencia de registros</value>
+  </data>
+  <data name="Bikes" xml:space="preserve">
+    <value>Bicicletas</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Comentarios</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Inicio</value>
+  </data>
+  <data name="JamuroBlog" xml:space="preserve">
+    <value>http://jamuro-blog.azurewebsites.net</value>
+  </data>
+  <data name="JamuroName" xml:space="preserve">
+    <value>José A. Muro</value>
+  </data>
+  <data name="MostExpensiveBikes" xml:space="preserve">
+    <value>Bicicletas más Caras</value>
+  </data>
+  <data name="NotAffectedForCheckingExistence" xml:space="preserve">
+    <value>Chequeo de existencia de registros eficiente</value>
+  </data>
+  <data name="NoTracking" xml:space="preserve">
+    <value>Sin Tracking</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>Número</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Precio</value>
+  </data>
+  <data name="SelectOnlySqlEmployedFields" xml:space="preserve">
+    <value>Select sólo con campos SQL empleados en los modelos conceptuales de negocio</value>
+  </data>
+  <data name="SkipTracking" xml:space="preserve">
+    <value>No uso de Tracking</value>
+  </data>
+  <data name="WithIncludes" xml:space="preserve">
+    <value>Con "Includes"</value>
+  </data>
+  <data name="AllBikesWithCheckAllAnyTitle" xml:space="preserve">
+    <value>Bicicletas con chequeo de existencia con Any() sobre todos los registros</value>
+  </data>
+  <data name="AllBikesWithCheckAllCountTitle" xml:space="preserve">
+    <value>Bicicletas con chequeo de existencia con Count() sobre todos los registros</value>
+  </data>
+  <data name="AllBikesWithCheckOneTitle" xml:space="preserve">
+    <value>Bicicletas con chequeo de existencia basado en primer registro</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Cargando</value>
+  </data>
+  <data name="Waiting" xml:space="preserve">
+    <value>Esperando</value>
+  </data>
+  <data name="OnlySpanishVersion" xml:space="preserve">
+    <value>Only Spanish Version</value>
+  </data>
+  <data name="ApplicationSubtitle" xml:space="preserve">
+    <value>Demo basada en SQL Server 2016 Adventure Works DB, MVC y EF.</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Consideraciones</value>
+  </data>
+  <data name="ExternalTools" xml:space="preserve">
+    <value>Herramientas Externas</value>
+  </data>
+  <data name="MoreResources" xml:space="preserve">
+    <value>Más Recursos</value>
+  </data>
+  <data name="Overview" xml:space="preserve">
+    <value>Visión General</value>
+  </data>
+  <data name="Technologies" xml:space="preserve">
+    <value>Tecnologías</value>
+  </data>
+  <data name="AddIncludes" xml:space="preserve">
+    <value>Con "Includes"</value>
+  </data>
+  <data name="AllBikesWithCheckAnyTitle" xml:space="preserve">
+    <value>Bicicletas con chequeo de existencia con Any() con filtrado</value>
+  </data>
+  <data name="AllBikesWithCheckWIthExistsTitle" xml:space="preserve">
+    <value>Bicicletas con chequeo de existencia con Exists()</value>
+  </data>
+  <data name="Bad" xml:space="preserve">
+    <value>Mal</value>
+  </data>
+  <data name="Best" xml:space="preserve">
+    <value>Mejor</value>
+  </data>
+  <data name="Good" xml:space="preserve">
+    <value>Bueno</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Ayuda</value>
+  </data>
+  <data name="N1Problem" xml:space="preserve">
+    <value>Problema N+1</value>
+  </data>
+  <data name="RestrictSQLFields" xml:space="preserve">
+    <value>Restricción de Campos SQL</value>
+  </data>
+  <data name="SQLIndexes" xml:space="preserve">
+    <value>Indices SQL</value>
+  </data>
+  <data name="SQLMonitorization" xml:space="preserve">
+    <value>Monitorización SQL</value>
+  </data>
+  <data name="SQLQueryOptimization" xml:space="preserve">
+    <value>Optimización de Consultas SQL</value>
+  </data>
+  <data name="SQLResourceOptimization" xml:space="preserve">
+    <value>Optimización de Resursos SQL</value>
+  </data>
+  <data name="Top10MostExpensiveBikes" xml:space="preserve">
+    <value>Top 10 Bicicletas Más Caras</value>
+  </data>
+  <data name="ShowHideDetails" xml:space="preserve">
+    <value>Mostrar/Ocultar Detalles</value>
+  </data>
+  <data name="SQLReturningOnlyTopBikes" xml:space="preserve">
+    <value>SQL devolviendo top {0} de Bicicletas más caras directamente de base de datos</value>
+  </data>
+  <data name="SQLTopMostExpensiveBikesBadMsg" xml:space="preserve">
+    <value>Consulta afectada por mala practica SQL que devuelve todas las Bicicletas y después, filtra las 10 más caras</value>
+  </data>
+  <data name="For" xml:space="preserve">
+    <value>Para</value>
+  </data>
+</root>
