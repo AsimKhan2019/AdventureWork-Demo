@@ -240,3 +240,5 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/Jamuro.AdventureWorks.SimpleDemo/Jamuro.AdventureWorks.SimpleDemo/Properties/PublishProfiles/jamuro77-AdventureWorksSimpleDemo - Web Deploy.pubxml
+/Jamuro.AdventureWorks.SimpleDemo/Jamuro.AdventureWorks.SimpleDemo/Properties/PublishProfiles/jamuro77-AdventureWorksSimpleDemo - FTP.pubxml

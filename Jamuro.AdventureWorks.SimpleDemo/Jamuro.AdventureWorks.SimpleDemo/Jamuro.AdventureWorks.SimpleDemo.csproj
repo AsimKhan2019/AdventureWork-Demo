@@ -285,6 +285,8 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jamuro.adventureworks.simpledemo.js" />
+    <None Include="Properties\PublishProfiles\jamuro77-AdventureWorksSimpleDemo - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\jamuro77-AdventureWorksSimpleDemo - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -346,7 +348,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Filters\" />
     <Folder Include="Providers\" />
-    <Folder Include="Views\PartialLocalizable\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -38,7 +38,7 @@ p.elapsed-time{
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  overflow:hidden;
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
@@ -48,10 +48,9 @@ p.elapsed-time{
     border: 3px solid #ddd;
     border-radius: 20px;
     padding: 15px;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
+    margin: 200px auto;/* 200px from the top and centered */
     border: 1px solid #888;
-    width: 40%; /* Could be more or less, depending on screen size */
+    width: 40%;
 }
 
 .product-item{
@@ -77,21 +76,25 @@ p.elapsed-time{
     margin:10px;
 }
 
-.img-ppt{
+.img-ppt,
+.img-ef,
+.img-linq
+{
     margin:20px 0px;
+    width:100%;
 }
 
 .langs{
     position:fixed;
-    bottom:20px;
-    right:20px;
+    bottom:5px;
+    right:5px;
 }
 .set-lang img{
     padding:2px;
 }
 
 .active-lang{
-    border:2px solid #00ff21;
+    border:2px solid #86bc25;
 }
 
 @media screen and (min-width: 768px) {
