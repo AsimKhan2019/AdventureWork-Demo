@@ -21,7 +21,7 @@
                 <span class="text-danger"><strong>@Labels.Bad</strong></span>
             </p>
             <p>
-                Results from LINQ query executed with "SQL Query Stress" tool over 100 iterations (filter by 10 most expensive bikes is not performed inside database):
+                @Labels.MostExpensiveBikesForBadQueryStressComments:
             </p>
             <div class="text-center">
                 <img src="@Url.GetImage("SQLQueryStress/ORM.Top10MostExpensive.1.PNG")"/>
@@ -29,10 +29,10 @@
         </div>
         <div class="col-md-6">
             <p class="text-center">
-                <span class="text-success"><strong>@Labels.Good</strong></span> (Current)
+                <span class="text-success"><strong>@Labels.Good</strong></span> (@Labels.Current)
             </p>
             <p>
-                Results from LINQ query with "Top 10 injected in SQL" executed with "SQL Query Stress" tool over 100 iterations:
+                @Labels.MostExpensiveBikesForBadQueryStressComments:
             </p>
             <div class="text-center">
                 <img src="@Url.GetImage("SQLQueryStress/ORM.Top10MostExpensive.2.PNG")"/>

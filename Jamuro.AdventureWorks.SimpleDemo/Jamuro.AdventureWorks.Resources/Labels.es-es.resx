@@ -232,7 +232,7 @@
     <value>Mejor</value>
   </data>
   <data name="Good" xml:space="preserve">
-    <value>Bueno</value>
+    <value>Bien</value>
   </data>
   <data name="Help" xml:space="preserve">
     <value>Ayuda</value>
@@ -269,5 +269,32 @@
   </data>
   <data name="For" xml:space="preserve">
     <value>Para</value>
+  </data>
+  <data name="MostExpensiveBikesForBadQueryStressComments" xml:space="preserve">
+    <value>Resultados obtenidos ejecutando la consulta SQL generada por LINQ sobre 100 iteraciones con "SQL Query Stress" (el filtrado de 10 bicicletas más caras no es realizado en la base de datos)</value>
+  </data>
+  <data name="MostExpensiveBikesForGoodQueryStressComments" xml:space="preserve">
+    <value>Resultados obtenidos ejecutando la consulta SQL generada por LINQ sobre 100 iteraciones con "SQL Query Stress" (con filtrado previo inyecyado en base de datos)</value>
+  </data>
+  <data name="AllImprovForBestQueryStressComments" xml:space="preserve">
+    <value>Resultados de "Con Includes + No Tracking + Sólo Campos SQL Requeridos" ejecutado con "SQL Query Stress" sobre 100 iteraciones</value>
+  </data>
+  <data name="AllImprovForGoodQueryStressComments" xml:space="preserve">
+    <value>Resultados de "Con Includes + No Tracking" ejecutado con "SQL Query Stress" sobre 100 iteraciones</value>
+  </data>
+  <data name="LinqImprovedByReturningSpecificSQLFields" xml:space="preserve">
+    <value>Todavía es posible mejorar el rendimiento consultando sólo los campos requeridos desde la consulta SQL</value>
+  </data>
+  <data name="LinqOkButCanBeImproved" xml:space="preserve">
+    <value>La consulta LINQ es buena pero todavía puede ser mejorada</value>
+  </data>
+  <data name="LinqReturningAllSqlFields" xml:space="preserve">
+    <value>La consulta SQL subyacente está devolviendo todos los campos de las tablas SQL</value>
+  </data>
+  <data name="Therefore" xml:space="preserve">
+    <value>Por lo tanto</value>
+  </data>
+  <data name="Current" xml:space="preserve">
+    <value>Actual</value>
   </data>
 </root>

@@ -133,6 +133,24 @@ namespace Jamuro.AdventureWorks.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Results from &quot;Add Includes + No Tracking + Only Required fields&quot; executed with &quot;SQL Query Stress&quot; tool over 100 iterations.
+        /// </summary>
+        public static string AllImprovForBestQueryStressComments {
+            get {
+                return ResourceManager.GetString("AllImprovForBestQueryStressComments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Results from &quot;Add Includes + No Tracking&quot; executed with &quot;SQL Query Stress&quot; tool over 100 iterations.
+        /// </summary>
+        public static string AllImprovForGoodQueryStressComments {
+            get {
+                return ResourceManager.GetString("AllImprovForGoodQueryStressComments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to All Products.
         /// </summary>
         public static string AllProducts {
@@ -241,6 +259,15 @@ namespace Jamuro.AdventureWorks.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Actual.
+        /// </summary>
+        public static string Current {
+            get {
+                return ResourceManager.GetString("Current", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tiempo de Ejecucion.
         /// </summary>
         public static string ElapsedTime {
@@ -313,6 +340,33 @@ namespace Jamuro.AdventureWorks.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to We can still improve performance by enhancing Repositories or LINQ queries in order to return only specific required fields.
+        /// </summary>
+        public static string LinqImprovedByReturningSpecificSQLFields {
+            get {
+                return ResourceManager.GetString("LinqImprovedByReturningSpecificSQLFields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The LINQ query executed in this view is good enough but yet it can be improved.
+        /// </summary>
+        public static string LinqOkButCanBeImproved {
+            get {
+                return ResourceManager.GetString("LinqOkButCanBeImproved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The underlying SQL is returning all the fields for each SQL table.
+        /// </summary>
+        public static string LinqReturningAllSqlFields {
+            get {
+                return ResourceManager.GetString("LinqReturningAllSqlFields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Loading.
         /// </summary>
         public static string Loading {
@@ -336,6 +390,24 @@ namespace Jamuro.AdventureWorks.Resources {
         public static string MostExpensiveBikes {
             get {
                 return ResourceManager.GetString("MostExpensiveBikes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Results from LINQ query executed with &quot;SQL Query Stress&quot; tool over 100 iterations (filter by 10 most expensive bikes is not performed inside database).
+        /// </summary>
+        public static string MostExpensiveBikesForBadQueryStressComments {
+            get {
+                return ResourceManager.GetString("MostExpensiveBikesForBadQueryStressComments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Results from LINQ query with &quot;Top 10 injected in SQL&quot; executed with &quot;SQL Query Stress&quot; tool over 100 iterations.
+        /// </summary>
+        public static string MostExpensiveBikesForGoodQueryStressComments {
+            get {
+                return ResourceManager.GetString("MostExpensiveBikesForGoodQueryStressComments", resourceCulture);
             }
         }
         
@@ -498,6 +570,15 @@ namespace Jamuro.AdventureWorks.Resources {
         public static string Technologies {
             get {
                 return ResourceManager.GetString("Technologies", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Therefore.
+        /// </summary>
+        public static string Therefore {
+            get {
+                return ResourceManager.GetString("Therefore", resourceCulture);
             }
         }
         
