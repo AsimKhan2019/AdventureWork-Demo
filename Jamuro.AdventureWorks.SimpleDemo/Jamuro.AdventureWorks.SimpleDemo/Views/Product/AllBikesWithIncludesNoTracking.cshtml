@@ -10,10 +10,11 @@
 <h2>@Labels.AvoidN1ProblemWithIncludes</h2>
 <h3>@Labels.SkipTracking</h3>
 <hr />
+
 <p>
-    The LINQ query executed in this view is good enough but yet it can be improved. 
-    In fact, the underlying SQL is returning all the fields for each SQL table. 
-    Therefore, we can still improve performance by enhancing Repositories or LINQ queries in order to return only specific required fields.
+    @Labels.LinqOkButCanBeImproved.
+    @Labels.LinqReturningAllSqlFields.
+    @Labels.Therefore, @Labels.LinqImprovedByReturningSpecificSQLFields    
 </p>
 
 @section ElapsedTime{   

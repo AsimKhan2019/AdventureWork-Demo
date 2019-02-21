@@ -273,4 +273,31 @@
   <data name="For" xml:space="preserve">
     <value>For</value>
   </data>
+  <data name="LinqImprovedByReturningSpecificSQLFields" xml:space="preserve">
+    <value>We can still improve performance by enhancing Repositories or LINQ queries in order to return only specific required fields</value>
+  </data>
+  <data name="LinqOkButCanBeImproved" xml:space="preserve">
+    <value>The LINQ query executed in this view is good enough but yet it can be improved</value>
+  </data>
+  <data name="LinqReturningAllSqlFields" xml:space="preserve">
+    <value>The underlying SQL is returning all the fields for each SQL table</value>
+  </data>
+  <data name="MostExpensiveBikesForBadQueryStressComments" xml:space="preserve">
+    <value>Results from LINQ query executed with "SQL Query Stress" tool over 100 iterations (filter by 10 most expensive bikes is not performed inside database)</value>
+  </data>
+  <data name="MostExpensiveBikesForGoodQueryStressComments" xml:space="preserve">
+    <value>Results from LINQ query with "Top 10 injected in SQL" executed with "SQL Query Stress" tool over 100 iterations</value>
+  </data>
+  <data name="Therefore" xml:space="preserve">
+    <value>Therefore</value>
+  </data>
+  <data name="AllImprovForBestQueryStressComments" xml:space="preserve">
+    <value>Results from "Add Includes + No Tracking + Only Required fields" executed with "SQL Query Stress" tool over 100 iterations</value>
+  </data>
+  <data name="AllImprovForGoodQueryStressComments" xml:space="preserve">
+    <value>Results from "Add Includes + No Tracking" executed with "SQL Query Stress" tool over 100 iterations</value>
+  </data>
+  <data name="Current" xml:space="preserve">
+    <value>Actual</value>
+  </data>
 </root>
