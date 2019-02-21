@@ -7,12 +7,13 @@
 }
 
 <h1>LINQ</h1>
+<p class="text-info">(@Labels.OnlySpanishVersion)</p>
 <hr/>
 
 <div class="row">
     <div class="col-md-12">
-        <h2>LINQ Overview</h2>
-        <p>(Extracted from <a href="https://www.TutorialsTeacher.com" target="_blank">TutorialTeacher.com</a>)</p>
+        <h2>Consideraciones Generales</h2>
+        <p>(Algunas de las imágenes pertenecen a <a href="https://www.TutorialsTeacher.com" target="_blank">TutorialTeacher.com</a>)</p>
         <p class="text-center"><img class="img-linq" src="@Url.GetImage("Linq/Linq-usage.PNG")"/></p>
     </div>
 </div>
@@ -20,7 +21,9 @@
 
 <div class="row">
     <div class="col-md-12">
-        <h2>Enumerable Extension Methods</h2>
+        <h2>Clase <i>System.Linq.Enumerable</i></h2>
+        <p>La clase <a href="https://docs.microsoft.com/es-es/dotnet/api/system.linq.enumerable?view=netframework-4.7.2" target="_blank">System.Linq.Enumerable</a> proporciona métodos de extensión para cualquier otra clase que implementa la interfaz <a href="https://docs.microsoft.com/es-es/dotnet/api/system.collections.generic.ienumerable-1?view=netframework-4.7.2" target="_blank">IEnumerable&lt;T&gt;</a></p>
+        <p><a href="https://referencesource.microsoft.com/#system.core/system/linq/Enumerable.cs" target="_blank">Ver Código fuente para .Net Framework 4.7.2</a></p>
         <p></p>
         <p class="text-center"><img class="img-linq" src="@Url.GetImage("Linq/Enumerable-extension-methods.PNG")"/></p>
     </div>
@@ -29,8 +32,9 @@
 
 <div class="row">
     <div class="col-md-12">
-        <h2>Queryable Extension Methods</h2>
-        <p></p>
+        <h2>Clase <i>System.Linq.Queryable</i></h2>
+        <p>La clase <a href="https://docs.microsoft.com/es-es/dotnet/api/system.linq.queryable?view=netframework-4.7.2" target="_blank">System.Linq.Queryable</a> proporciona métodos de extensión para cualquier otra clase que implementa la interfaz <a href="https://docs.microsoft.com/es-es/dotnet/api/system.linq.iqueryable-1?view=netframework-4.7.2" target="_blank">IQueryable&lt;T&gt;</a></p>
+        <p><a href="https://referencesource.microsoft.com/#System.Core/System/Linq/IQueryable.cs,a6b3f724cebbc54c" target="_blank">Ver Código fuente para .Net Framework 4.7.2</a></p>
         <p class="text-center"><img class="img-linq" src="@Url.GetImage("Linq/Queryable-extension-methods.PNG")"/></p>
     </div>
 </div>
@@ -38,7 +42,16 @@
 
 <div class="row">
     <div class="col-md-12">
-        <h2>LINQ Query Syntax</h2>
+        <h2>Sintaxis Uso de Métodos de LINQ (LINQ Extension Methods)</h2>
+        <p></p>
+        <p class="text-center"><img class="img-linq" src="@Url.GetImage("Linq/Linq-method-syntax.PNG")" /></p>
+    </div>
+</div>
+<hr />
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Sintaxis Consultas LINQ (LINQ Queries)</h2>
         <p></p>
         <p class="text-center"><img class="img-linq" src="@Url.GetImage("Linq/Linq-query-syntax.PNG")"/></p>
     </div>
@@ -46,10 +59,78 @@
 <hr />
 
 <div class="row">
-    <div class="col-md-12">
-        <h2>LINQ Method Syntax</h2>
-        <p></p>
-        <p class="text-center"><img class="img-linq" src="@Url.GetImage("Linq/Linq-method-syntax.PNG")"/></p>
+    <h2><i>System.Linq.Enumerable</i> vs <i>System.Linq.Queryable</i></h2>
+    <p>La clase <i>System.Linq.Queryable</i> permite, si es posible, la ejecución directa de las expresiones pasadas como parámetros directamente sobre la base de datos.</p>
+    <p>
+        Sin embargo, <i>System.Linq.Enumerable</i> sólo procesa datos en memoria, es decir, primero recupera todos los objetos de la base de datos y después ejecuta en memoria las acciones pasadas como parámetros.<span class="text-danger">¡Mal Rendimiento! <a href="https://stackoverflow.com/questions/2876616/returning-ienumerablet-vs-iqueryablet" target="_blank">Más Información</a></span>
+    </p>
+    <p>El siguiente ejemplo, realizado con <a href="https://www.linqpad.net/" target="_blank">LINQPad</a>, consulta los productos de la base de datos Adventure Works 2016 mediante la misma "query", con la única diferencia del tipo de objeto utilizado para devolver la colección de entidades.
+    Como se ve abajo, el SQL generado por una y otra consulta es diferente. 
+        <ul>
+            <li>La primera (IEnumerable) devuelve todos los registros de base de datos y después filtra en memoria.</li>
+            <li>La segunda (IQueryable) es mucho más eficiente y es capaz de filtrar de antemano en base de datos.</li>
+        </ul>
+        <br />
+    </p>
+    
+    <div class="col-md-6">
+        
+        <pre>
+        <code>
+<strong class="text-danger">IEnumerable</strong>&lt;ProductItem&gt;query =
+from p in Product
+select new ProductItem
+{
+    Name  = p.Name,
+    ListPrice = p.ListPrice,
+    Size = p.Size
+};
+var firstResult = query.Where(c => c.ListPrice < 3000);
+var secondResult = firstResult.Where(c => c.Name.Contains("Road"));
+var finalResult = secondResult.Where(c => c.Size == "52");
+        </code>
+         </pre>
+        <p class="text-center">SQL generado con IEnumerable<br/><i class="glyphicon glyphicon-arrow-down"></i></p>
+        <pre>
+        <code> 
+SELECT 
+    1 AS [C1], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[ListPrice] AS [ListPrice], 
+    [Extent1].[Size] AS [Size]
+FROM [Production].[Product] AS [Extent1]
+        <br/><br /></code>
+        </pre>
+    </div>
+    <div class="col-md-6">
+        <pre>
+        <code>
+<strong class="text-success">IQueryable</strong>&lt;ProductItem&gt;query =
+from p in Product
+select new ProductItem
+{
+    Name  = p.Name,
+    ListPrice = p.ListPrice,
+    Size = p.Size
+};
+var firstResult = query.Where(c => c.ListPrice < 3000);
+var secondResult = firstResult.Where(c => c.Name.Contains("Road"));
+var finalResult = secondResult.Where(c => c.Size == "52");
+        </code>
+        </pre>
+        <p class="text-center">SQL generado con IQueryable<br /><i class="glyphicon glyphicon-arrow-down"></i></p>
+        <pre>
+        <code>
+SELECT 
+    1 AS [C1], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[ListPrice] AS [ListPrice], 
+    [Extent1].[Size] AS [Size]
+FROM [Production].[Product] AS [Extent1]
+WHERE ([Extent1].[ListPrice] < cast(3000 as decimal(18))) AND ([Extent1].[Name] LIKE N'%Road%') AND (N'52' = [Extent1].[Size])
+        </code>
+        </pre>
     </div>
 </div>
-<hr />
+
+
