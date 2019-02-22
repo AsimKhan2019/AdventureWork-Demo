@@ -32,23 +32,15 @@ namespace Jamuro.AdventureWorks.Services.Workers
                 productModel.ProductNumber = p.ProductNumber;
                 productModel.Color = p.Color;
                 productModel.ListPrice = p.ListPrice;
+
                 #endregion
 
-                #region Get Category
-
-                Models.ProductCategory category = new Models.ProductCategory();
-                if (p.ProductSubcategory != null)
-                {
-                    category.ProductCategoryId =  p.ProductSubcategory.ProductCategoryID;
-                    category.CategoryName = p.ProductSubcategory.ProductCategory.Name;
-                    category.ProductSubcategoryId = p.ProductSubcategory.ProductSubcategoryID;
-                    category.SubcategoryName = p.ProductSubcategory.Name;
-                }
-                productModel.ProductCategory = category;
-
-                #endregion 
-
                 #region Get Photos
+
+                /* If executed without "includes" it generates a new connection per product item querying "ProductProductPhoto" table. */
+                /* If executed without "includes" it generates a new connection per product item querying "ProductPhoto" table, if each item has a different photo!
+                   Otherwise, use EF cache capabilities to retrieve previously returned photos avoiding hitting database. */
+                /* Overload: 1 * N + X (N => number of products, X => number of distinct photos over all products ) */
 
                 foreach (ProductProductPhoto x in p.ProductProductPhoto)
                 {
@@ -62,6 +54,9 @@ namespace Jamuro.AdventureWorks.Services.Workers
 
                 #region Get Reviews
 
+                /* If executed without "includes" it generates a new connection per product item querying "ProductReview" table. */
+                /* Overload: N (N => number of products) */
+
                 foreach (ProductReview x in p.ProductReview)
                 {
                     Models.ProductReview productReview = new Models.ProductReview();
@@ -70,6 +65,27 @@ namespace Jamuro.AdventureWorks.Services.Workers
                     productReview.Rating = x.Rating;
                     productModel.ProductReview.Add(productReview);
                 }
+
+
+                #endregion
+
+                #region Get Category
+
+                /* Without "includes" it generates a new connection for ProductCategory: Category => Bikes (1) */
+                /* Without "includes" it generates three new connections for ProductSubCategory: SubcategoryId => Mountain Bikes (1), Road Bikes (2) and Touring Bikes (3) */
+                /* After getting all the required categories and subcategories, EF uses cache capabilities to avoid hitting DB again if previous entities were retrieved */
+                /* Overload: 4 */
+
+                Models.ProductCategory category = new Models.ProductCategory();
+                if (p.ProductSubcategory != null)
+                {
+                    category.ProductCategoryId = p.ProductSubcategory.ProductCategoryID;
+                    category.CategoryName = p.ProductSubcategory.ProductCategory.Name;
+                    category.ProductSubcategoryId = p.ProductSubcategory.ProductSubcategoryID;
+                    category.SubcategoryName = p.ProductSubcategory.Name;
+                }
+                productModel.ProductCategory = category;
+                
 
                 #endregion
 
@@ -94,6 +110,10 @@ namespace Jamuro.AdventureWorks.Services.Workers
 
         public IEnumerable<Models.Product> GetAllBikesWithCheckAllCount()
         {
+            /* Issues */
+            /* ProductRepository.GetAll() select all the products, not only bikes */
+            /* This case, lambda expression is generating as many queries as distinct present subcategories */
+            /* This way of detecting existence of records is very bad */
             bool checkForExistence = ProductRepository.GetAll().Count(x => x.ProductSubcategory != null && x.ProductSubcategory.ProductCategoryID == m_productCategoryBikes) > 0;
 
             return GenerateProductModel(checkForExistence ? 
@@ -108,6 +128,10 @@ namespace Jamuro.AdventureWorks.Services.Workers
 
         public IEnumerable<Models.Product> GetAllBikesWithCheckAllAny()
         {
+            /* Issues */
+            /* ProductRepository.GetAll() select all the products, not only bikes */
+            /* This case, lambda expression is generating as many queries as distinct present subcategories until getting a subcategory that matches "Bikes" category */
+            /* This way of detecting existence of records is bad despite the fact of using "Any", but at least it generates fewer connections  */
             bool checkForExistence = ProductRepository.GetAll().Any(x => x.ProductSubcategory != null && x.ProductSubcategory.ProductCategoryID == m_productCategoryBikes);
 
             return GenerateProductModel(checkForExistence ? 
@@ -124,6 +148,8 @@ namespace Jamuro.AdventureWorks.Services.Workers
 
         public IEnumerable<Models.Product> GetAllBikesWithCheckOne()
         {
+            /* Only one query to check existence */
+            /* It is good enough, but there is still scope to improve */
             bool checkForExistence = ProductRepository.GetOne(x => x.ProductSubcategory != null && x.ProductSubcategory.ProductCategoryID == m_productCategoryBikes) != null;
 
             return GenerateProductModel(checkForExistence ? 
@@ -138,6 +164,8 @@ namespace Jamuro.AdventureWorks.Services.Workers
 
         public IEnumerable<Models.Product> GetAllBikesWithCheckExists()
         {
+            /* Only one query to check existence */
+            /* Best choice so far */
             bool checkForExistence = ProductRepository.Exists(x => x.ProductSubcategory != null && x.ProductSubcategory.ProductCategoryID == m_productCategoryBikes);
 
             return GenerateProductModel(checkForExistence ?
@@ -152,6 +180,8 @@ namespace Jamuro.AdventureWorks.Services.Workers
 
         public IEnumerable<Models.Product> GetAllBikesWithIncludes()
         {
+            /* Due to "includes", an eager loading is triggered with only one SQL connection/query */
+            /* All the SQL fields are returned though */
             return GenerateProductModel(ProductRepository.Exists(x => x.ProductSubcategory != null && x.ProductSubcategory.ProductCategoryID == m_productCategoryBikes) ? 
                 ProductRepository.Get(x => x.ProductSubcategory.ProductCategoryID == m_productCategoryBikes,
                     false,
@@ -164,6 +194,8 @@ namespace Jamuro.AdventureWorks.Services.Workers
 
         public IEnumerable<Models.Product> GetAllBikesWithIncludesNoTracking()
         {
+            /* Due to "includes", an eager loading is triggered with only one SQL connection/query */
+            /* All the SQL fields are returned though */
             return GenerateProductModel(ProductRepository.Exists(x => x.ProductSubcategory != null && x.ProductSubcategory.ProductCategoryID == m_productCategoryBikes) ? 
                 ProductRepository.Get(x => x.ProductSubcategory.ProductCategoryID == m_productCategoryBikes,
                     true,
@@ -176,6 +208,8 @@ namespace Jamuro.AdventureWorks.Services.Workers
 
         public IEnumerable<Models.Product> GetAllBikesWithAllImprovements()
         {
+            /* Due to "includes", an eager loading is triggered with only one SQL connection/query */
+            /* Due to injection of new "select fields" expression, only required SQL fields are retruned from DB */
             var model = ProductRepository.GetWithOutputModel<Models.Product>(x => x.ProductSubcategory.ProductCategoryID == m_productCategoryBikes,
                     true,
                     null,
