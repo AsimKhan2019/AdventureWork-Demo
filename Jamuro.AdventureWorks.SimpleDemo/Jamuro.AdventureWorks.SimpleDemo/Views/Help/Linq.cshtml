@@ -58,9 +58,9 @@
 </div>
 <hr />
 
-<div class="row">
-    <h2><i>System.Linq.Enumerable</i> vs <i>System.Linq.Queryable</i></h2>
+<div class="row">    
     <div style="padding:10px;">
+        <h2><i>System.Linq.Enumerable</i> vs <i>System.Linq.Queryable</i></h2>
         <p>La clase <i>System.Linq.Queryable</i> permite, si es posible, la ejecución directa de las expresiones pasadas como parámetros directamente sobre la base de datos.</p>
         <p>
             Sin embargo, <i>System.Linq.Enumerable</i> sólo procesa datos en memoria, es decir, primero recupera todos los objetos de la base de datos y después ejecuta en memoria las acciones pasadas como parámetros.<span class="text-danger">¡Mal Rendimiento! <a href="https://stackoverflow.com/questions/2876616/returning-ienumerablet-vs-iqueryablet" target="_blank">Más Información</a></span>
